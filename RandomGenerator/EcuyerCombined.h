@@ -8,8 +8,8 @@ class EcuyerCombined :
 {
 
 protected:
-    LinearCongruential firstGen;
-    LinearCongruential secondGen;
+    LinearCongruential& firstGen;
+    LinearCongruential& secondGen;
 
 public:
     EcuyerCombined() = default;

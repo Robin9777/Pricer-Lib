@@ -1,34 +1,32 @@
 #include <iostream>
-#include "LinearCongruential.h"
+#include "../RandomGenerator/LinearCongruential.h"
 
 
 int main() {
 
-	std::cout << "Hello World test !\n";
+	std::cout << "Hello World test !" << std::endl;
 
-	//RandomGenerator* Gen = new LinearCongruential(
-	//	27,
-	//	17,
-	//	43,
-	//	100
-	//);
+	LinearCongruential Gen(
+		27u,
+		17u,
+		43u,
+		100u
+	);
 
-	std::cout << "test passed.\n";
+	std::cout << "test passed." << std::endl;
 
-	// size_t seed1(2);
-	// size_t seed2(3);
+	std::cout << "Generating 10 numbers:" << std::endl;
+	for (int i = 0; i < 10; ++i) {
+		double v = Gen.Generate();
+		std::cout << i << ": " << v << std::endl;
+	}
 
-	// LinearCongruential gen1(seed1, 40014, 0, 2'147'483'563);
-	// LinearCongruential gen2(seed2, 40692, 0, 2'147'483'399);
+	size_t nsim = 10000;
+	std::cout << "Mean(" << nsim << ") = " << Gen.Mean(nsim) << std::endl;
+	std::cout << "Variance(" << nsim << ") = " << Gen.Variance(nsim) << std::endl;
 
-
-	//for (int i = 0; i < 3; ++i)
-	//{
-	//	double currentnumber = Gen->Generate();
-	//	std::cout << currentnumber << std::endl;
-
-	//}
+	std::cout << "Appuyez sur Entrée pour fermer..." << std::endl;
+	std::cin.get();
 
 	return 0;
-
 }

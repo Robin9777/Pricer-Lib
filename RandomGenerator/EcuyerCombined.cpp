@@ -18,9 +18,11 @@ double EcuyerCombined::Generate() {
     long x = static_cast<long>(firstGen.GetSeed())
         - static_cast<long>(secondGen.GetSeed());
 
-    if (x < 0)
-        x += (firstGen.GetModulus() - 1);
+	size_t denominator = firstGen.GetModulus() - 1;
 
-    return static_cast<double>(x) / firstGen.GetModulus();
+    if (x < 0)
+        x += (denominator);
+
+    return static_cast<double>(x) / denominator;
 
 }

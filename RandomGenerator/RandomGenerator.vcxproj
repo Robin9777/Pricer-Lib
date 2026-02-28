@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -139,8 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bernoulli.h" />
+    <ClInclude Include="Binomial.h" />
+    <ClInclude Include="DiscreteGenerator.h" />
     <ClInclude Include="EcuyerCombined.h" />
+    <ClInclude Include="FiniteSet.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="HeadTail.h" />
     <ClInclude Include="LinearCongruential.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PseudoGenerator.h" />
@@ -148,8 +153,13 @@
     <ClInclude Include="UniformGenerator.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bernoulli.cpp" />
+    <ClCompile Include="Binomial.cpp" />
+    <ClCompile Include="DiscreteGenerator.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="EcuyerCombined.cpp" />
+    <ClCompile Include="FiniteSet.cpp" />
+    <ClCompile Include="HeadTail.cpp" />
     <ClCompile Include="LinearCongruential.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">

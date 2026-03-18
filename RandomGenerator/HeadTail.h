@@ -11,7 +11,6 @@ private:
 
 public:
 
-    HeadTail() = default;
     HeadTail(UniformGenerator& _Ugen);
 
     // Methods

@@ -4,12 +4,15 @@
 
 
 
-Poisson::Poisson(double _lambda, Bernoulli _Bern) : 
+Poisson::Poisson(double _lambda, UniformGenerator& _Ugen) : 
     lambda(_lambda),
-    Bern(_Bern)
+    Ugen(_Ugen)
 {
 }
 
+double Poisson::Generate() {
+    return Generate(PoissonAlgo::PoissonAlgo1);
+}
 
 double Poisson::Generate(PoissonAlgo algo) {
 
@@ -19,12 +22,13 @@ double Poisson::Generate(PoissonAlgo algo) {
         case PoissonAlgo::PoissonAlgo2:
             return GenerateAlgo2();
         }
+    return GenerateAlgo1();
 }
 
 
 double Poisson::GenerateAlgo1() {
 
-    double U = Bern.Generate();
+    double U = Ugen.Generate();
 
     int cpt(0);
     double density_k(exp(-this->lambda));

@@ -7,6 +7,5 @@ class UniformGenerator : public RandomGenerator
 public:
 	UniformGenerator() = default;
 
-
 };
 

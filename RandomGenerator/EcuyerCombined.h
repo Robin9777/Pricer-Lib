@@ -12,10 +12,11 @@ protected:
     LinearCongruential& secondGen;
 
 public:
-    EcuyerCombined() = default;
+
+    EcuyerCombined() = delete;
     EcuyerCombined(LinearCongruential& _firstGen, LinearCongruential& _secondGen);
 
-    virtual double Generate();
+    virtual double Generate() override;
 
 };
 

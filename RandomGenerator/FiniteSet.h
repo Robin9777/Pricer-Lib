@@ -1,7 +1,7 @@
 #pragma once
 #include "DiscreteGenerator.h"
 #include <vector>
-#include "Bernoulli.h"
+#include "UniformGenerator.h"
 
 
 class FiniteSet :
@@ -11,12 +11,11 @@ class FiniteSet :
 private:
 
 	std::vector<double> values;
-	Bernoulli Bern;
+	UniformGenerator& Ugen;
 
 public:
 
-	FiniteSet() = default;
-	FiniteSet(std::vector<double> _values, Bernoulli _Bern);
+	FiniteSet(std::vector<double> _values, UniformGenerator& _Ugen);
 
 	virtual double Generate();
 

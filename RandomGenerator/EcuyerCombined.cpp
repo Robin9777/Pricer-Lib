@@ -3,12 +3,11 @@
 #include <vector>
 
 
-EcuyerCombined::EcuyerCombined(LinearCongruential& _firstGen, LinearCongruential& _secondGen) :
-	firstGen(_firstGen),
-	secondGen(_secondGen)
+EcuyerCombined::EcuyerCombined(LinearCongruential& _firstGen, LinearCongruential& _secondGen) : PseudoGenerator(0),
+    firstGen(_firstGen),
+    secondGen(_secondGen)
 {
-
-}
+};
 
 double EcuyerCombined::Generate() {
 

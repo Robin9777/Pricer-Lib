@@ -2,7 +2,7 @@
 #include "Binomial.h"
 
 
-Binomial::Binomial(int& _n, Bernoulli _bern) :
+Binomial::Binomial(int _n, Bernoulli& _bern) :
 	bern(_bern),
 	n(_n) {
 

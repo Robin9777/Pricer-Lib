@@ -16,15 +16,16 @@ class Exponential :
 private:
 
 	double lambda;
+	UniformGenerator& Ugen;
 	double GenerateInverseTransform() const;
 	double GenerateRejectionSampling() const;
 
 
 public:
 
-	Exponential() = default;
 	Exponential(double _lambda, UniformGenerator& _Ugen);
-	virtual double Generate(ExpoAlgo algo);
+	virtual double Generate() override;
+	double Generate(ExpoAlgo algo);
 
 };
 

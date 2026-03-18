@@ -1,38 +1,30 @@
-#pragma once
+﻿#pragma once
 #include "ContinuousGenerator.h"
-
-
+#include "UniformGenerator.h"
 
 enum class NormalAlgo {
-    BoxMuller,
-    CentralLimitTheorem,
-    RejectionSampling
+	BoxMuller,
+	CentralLimitTheorem,
+	RejectionSampling
 };
-
 
 class Normal :
-    public ContinuousGenerator
+	public ContinuousGenerator
 {
+public:
+	Normal() = delete;
+	Normal(double _mu, double _sigma, UniformGenerator& _Ugen);
+
+	virtual double Generate() override;
+	double Generate(NormalAlgo algo);
 
 protected:
-    // variables
-    double mu;
+	double mu;
 	double sigma;
+	UniformGenerator& Ugen;
 
 private:
-
-	double BoxMullerAlgorythm() const;
-	double CentralLimitTheoremAlgorythm() const;
-	double RejectionSamplingAlgorythm() const;
-
-public:
-
-    Normal() = default;
-    Normal(double _mu, double _sigma);
-
-	virtual double Generate(NormalAlgo algo);
-
-
-
+	double BoxMullerAlgorithm() const;
+	double CentralLimitTheoremAlgorithm() const;
+	double RejectionSamplingAlgorithm() const;
 };
-

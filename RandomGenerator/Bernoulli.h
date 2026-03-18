@@ -12,7 +12,6 @@ private:
 
 public:
 
-    Bernoulli() = default;
     Bernoulli(const double& _p, UniformGenerator& _Ugen);
 
     // Methods

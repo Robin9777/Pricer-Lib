@@ -7,4 +7,3 @@ class DiscreteGenerator :
 public:
     DiscreteGenerator() = default;
 };
-

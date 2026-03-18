@@ -1,6 +1,6 @@
 #pragma once
 #include "DiscreteGenerator.h"
-#include "Bernoulli.h"
+#include "UniformGenerator.h"
 
 
 enum class PoissonAlgo {
@@ -16,17 +16,17 @@ private:
 
     // variables
     double lambda;
-	Bernoulli Bern;
+	UniformGenerator& Ugen;
 
     double GenerateAlgo1();
     double GenerateAlgo2();
 
 public:
 
-    Poisson() = default;
-    Poisson(double _lambda, Bernoulli _Bern);
+    Poisson(double _lambda, UniformGenerator& _Ugen);
 
-    virtual double Generate(PoissonAlgo algo);
+    virtual double Generate() override;
+    double Generate(PoissonAlgo algo);
 
 };
 

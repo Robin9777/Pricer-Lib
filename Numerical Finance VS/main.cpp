@@ -1,19 +1,14 @@
 #include <iostream>
-#include "../RandomGenerator/LinearCongruential.h"
+#include "../RandomGenerator/EcuyerCombined.h"
 
 
 int main() {
 
 	std::cout << "Hello World test !" << std::endl;
 
-	LinearCongruential Gen(
-		27u,
-		17u,
-		43u,
-		100u
-	);
-
-	std::cout << "test passed." << std::endl;
+	LinearCongruential L1(1, 2, 3, 4);
+	LinearCongruential L2(1, 2, 3, 4);
+	EcuyerCombined Gen(L1, L2);
 
 	std::cout << "Generating 10 numbers:" << std::endl;
 	for (int i = 0; i < 10; ++i) {

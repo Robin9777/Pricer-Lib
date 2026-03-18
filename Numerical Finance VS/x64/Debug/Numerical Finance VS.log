@@ -1,6 +1,2 @@
 ﻿  main.cpp
-main.obj : error LNK2019: symbole externe non résolu "public: double __cdecl RandomGenerator::Mean(unsigned __int64)" (?Mean@RandomGenerator@@QEAAN_K@Z) référencé dans la fonction main
-main.obj : error LNK2019: symbole externe non résolu "public: double __cdecl RandomGenerator::Variance(unsigned __int64)" (?Variance@RandomGenerator@@QEAAN_K@Z) référencé dans la fonction main
-main.obj : error LNK2019: symbole externe non résolu "public: __cdecl LinearCongruential::LinearCongruential(unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64)" (??0LinearCongruential@@QEAA@_K000@Z) référencé dans la fonction main
-main.obj : error LNK2019: symbole externe non résolu "public: virtual double __cdecl LinearCongruential::Generate(void)" (?Generate@LinearCongruential@@UEAANXZ) référencé dans la fonction main
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\x64\Debug\Numerical Finance VS.exe : fatal error LNK1120: 4 externes non résolus
+  Numerical Finance VS.vcxproj -> C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\x64\Debug\Numerical Finance VS.exe

@@ -8,13 +8,13 @@ class Binomial :
 {
 
 private:
-    Bernoulli bern;
+    Bernoulli& bern;
     int n;
 
 
 public:
 
-    Binomial(int& _n, Bernoulli _bern);
+    Binomial(int _n, Bernoulli& _bern);
 
     // Methods
     virtual double Generate();

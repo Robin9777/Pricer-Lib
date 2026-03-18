@@ -2,9 +2,9 @@
 #include "FiniteSet.h"
 
 
-FiniteSet::FiniteSet(std::vector<double> _values, Bernoulli _Bern) :
+FiniteSet::FiniteSet(std::vector<double> _values, UniformGenerator& _Ugen) :
 	values(_values),
-	Bern(_Bern)
+	Ugen(_Ugen)
 
 {
 }
@@ -16,7 +16,7 @@ double FiniteSet::Generate() {
         sum += v;
     }
 
-    double U = Bern.Generate();
+    double U = Ugen.Generate();
 
     double cumulative = 0.0;
 

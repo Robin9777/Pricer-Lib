@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -141,13 +141,17 @@
   <ItemGroup>
     <ClInclude Include="Bernoulli.h" />
     <ClInclude Include="Binomial.h" />
+    <ClInclude Include="ContinuousGenerator.h" />
     <ClInclude Include="DiscreteGenerator.h" />
     <ClInclude Include="EcuyerCombined.h" />
+    <ClInclude Include="Exponential.h" />
     <ClInclude Include="FiniteSet.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="HeadTail.h" />
     <ClInclude Include="LinearCongruential.h" />
+    <ClInclude Include="Normal.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Poisson.h" />
     <ClInclude Include="PseudoGenerator.h" />
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="UniformGenerator.h" />
@@ -155,27 +159,25 @@
   <ItemGroup>
     <ClCompile Include="Bernoulli.cpp" />
     <ClCompile Include="Binomial.cpp" />
+    <ClCompile Include="ContinuousGenerator.cpp" />
     <ClCompile Include="DiscreteGenerator.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="EcuyerCombined.cpp" />
+    <ClCompile Include="Exponential.cpp" />
     <ClCompile Include="FiniteSet.cpp" />
     <ClCompile Include="HeadTail.cpp" />
     <ClCompile Include="LinearCongruential.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Normal.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Poisson.cpp" />
     <ClCompile Include="PseudoGenerator.cpp" />
     <ClCompile Include="RandomGenerator.cpp" />
     <ClCompile Include="UniformGenerator.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Numerical Finance VS\Numerical Finance VS.vcxproj">
-      <Project>{e472f2db-3fc1-4a77-b9f6-81e997312095}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

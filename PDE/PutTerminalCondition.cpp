@@ -9,5 +9,5 @@ PutTerminalCondition::PutTerminalCondition(double _strike)
 }
 
 double PutTerminalCondition::operator()(double x) {
-	return std::max(this->Strike - x, 0.0)
+	return std::max(this->Strike - x, 0.0);
 }

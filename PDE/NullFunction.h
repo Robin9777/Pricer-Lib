@@ -5,6 +5,6 @@ class NullFunction :
 {
 
 public:
-    NullFunction() = default;
-    double operator()(double x, double t) = 0;
+    NullFunction();
+    double operator()(double x, double t) override;
 };

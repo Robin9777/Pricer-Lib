@@ -1,16 +1,16 @@
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\Bernoulli.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\Bernoulli.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\Binomial.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\Binomial.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\ContinuousGenerator.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\ContinuousGenerator.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\DiscreteGenerator.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\DiscreteGenerator.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\dllmain.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\dllmain.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\EcuyerCombined.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\EcuyerCombined.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\Exponential.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\Exponential.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\FiniteSet.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\FiniteSet.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\HeadTail.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\HeadTail.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\LinearCongruential.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\LinearCongruential.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\Normal.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\Normal.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\pch.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\pch.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\Poisson.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\Poisson.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\PseudoGenerator.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\PseudoGenerator.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\RandomGenerator.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\RandomGenerator.obj
-C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\UniformGenerator.cpp;C:\Users\rboui\OneDrive rbou\OneDrive\Bureau\203\Numerical Finance\Numerical Finance VS\RandomGenerator\x64\Debug\UniformGenerator.obj
+C:\SandBox\Numerical Finance\RandomGenerator\Bernoulli.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\Bernoulli.obj
+C:\SandBox\Numerical Finance\RandomGenerator\Binomial.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\Binomial.obj
+C:\SandBox\Numerical Finance\RandomGenerator\ContinuousGenerator.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\ContinuousGenerator.obj
+C:\SandBox\Numerical Finance\RandomGenerator\DiscreteGenerator.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\DiscreteGenerator.obj
+C:\SandBox\Numerical Finance\RandomGenerator\dllmain.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\dllmain.obj
+C:\SandBox\Numerical Finance\RandomGenerator\EcuyerCombined.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\EcuyerCombined.obj
+C:\SandBox\Numerical Finance\RandomGenerator\Exponential.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\Exponential.obj
+C:\SandBox\Numerical Finance\RandomGenerator\FiniteSet.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\FiniteSet.obj
+C:\SandBox\Numerical Finance\RandomGenerator\HeadTail.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\HeadTail.obj
+C:\SandBox\Numerical Finance\RandomGenerator\LinearCongruential.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\LinearCongruential.obj
+C:\SandBox\Numerical Finance\RandomGenerator\Normal.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\Normal.obj
+C:\SandBox\Numerical Finance\RandomGenerator\pch.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\pch.obj
+C:\SandBox\Numerical Finance\RandomGenerator\Poisson.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\Poisson.obj
+C:\SandBox\Numerical Finance\RandomGenerator\PseudoGenerator.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\PseudoGenerator.obj
+C:\SandBox\Numerical Finance\RandomGenerator\RandomGenerator.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\RandomGenerator.obj
+C:\SandBox\Numerical Finance\RandomGenerator\UniformGenerator.cpp;C:\SandBox\Numerical Finance\RandomGenerator\x64\Debug\UniformGenerator.obj

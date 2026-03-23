@@ -14,4 +14,3 @@ public:
     double operator()(double t) override;
 
 };
-

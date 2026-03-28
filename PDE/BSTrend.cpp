@@ -8,5 +8,5 @@ BSTrend::BSTrend(double _rate) :
 
 double BSTrend::operator()(double x, double t)
 {
-	return rate;
+	return rate * x;
 }

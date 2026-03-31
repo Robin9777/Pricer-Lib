@@ -1,14 +1,15 @@
 #include "pch.h"
-#include "BSEuler1D.h"
+#include "BSMilstein1D.h"
 #include "BrownianD1.h"
 #include "../SDE/SinglePath.h"
+#include <cmath>
 
-BSEuler1D::BSEuler1D(RandomGenerator* Gen, double _spot, double _rate, double _vol) :
+BSMilstein1D::BSMilstein1D(RandomGenerator* Gen, double _spot, double _rate, double _vol) :
 	BlackScholes1D(Gen, _spot, _rate, _vol)
 {
 }
 
-void BSEuler1D::Simulate(double startTime, double endTime, size_t nbSteps)
+void BSMilstein1D::Simulate(double startTime, double endTime, size_t nbSteps)
 {
 	// Init Path
 	for (auto p : this->Paths) delete p;
@@ -30,8 +31,12 @@ void BSEuler1D::Simulate(double startTime, double endTime, size_t nbSteps)
 		double t_curr = startTime + i * dt;
 		double dW = W_path->GetState(t_curr) - W_path->GetState(t_prev);
 
+		// currentvalue += (this->Rate - 1/2 * std::pow(this->Vol, 2)) * currentvalue * dt
+		// 	+ 1/2 * std::pow(this->Vol, 2) * currentvalue * std::pow(dW, 2);
+		// Milstein : S_{i+1} = S_i + r*S_i*dt + vol*S_i*dW + 0.5*vol^2*S_i*(dW^2 - dt)
 		currentvalue += this->Rate * currentvalue * dt
-			          + this->Vol  * currentvalue * dW;
+			+ this->Vol * currentvalue * dW
+			+ 0.5 * std::pow(this->Vol, 2) * currentvalue * (std::pow(dW, 2) - dt);
 
 		this->Paths[0]->InsertValue(currentvalue);
 	}

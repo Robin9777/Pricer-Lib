@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.3.11520.95 d18.3
+VisualStudioVersion = 18.3.11520.95
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Numerical Finance VS", "Numerical Finance VS\Numerical Finance VS.vcxproj", "{E472F2DB-3FC1-4A77-B9F6-81E997312095}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PDE", "PDE\PDE.vcxproj", "{C828BAA6-B0EE-4A57-9888-8137F4D12EE1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestPDE", "UnitTestPDE\UnitTestPDE.vcxproj", "{F246CEF1-7026-444E-F752-E69CC77EA476}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDE", "SDE\SDE.vcxproj", "{D34BBE1C-748D-4D6D-860E-7433D3829184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,14 @@ Global
 		{F246CEF1-7026-444E-F752-E69CC77EA476}.Release|x64.Build.0 = Release|x64
 		{F246CEF1-7026-444E-F752-E69CC77EA476}.Release|x86.ActiveCfg = Release|Win32
 		{F246CEF1-7026-444E-F752-E69CC77EA476}.Release|x86.Build.0 = Release|Win32
+		{D34BBE1C-748D-4D6D-860E-7433D3829184}.Debug|x64.ActiveCfg = Debug|x64
+		{D34BBE1C-748D-4D6D-860E-7433D3829184}.Debug|x64.Build.0 = Debug|x64
+		{D34BBE1C-748D-4D6D-860E-7433D3829184}.Debug|x86.ActiveCfg = Debug|Win32
+		{D34BBE1C-748D-4D6D-860E-7433D3829184}.Debug|x86.Build.0 = Debug|Win32
+		{D34BBE1C-748D-4D6D-860E-7433D3829184}.Release|x64.ActiveCfg = Release|x64
+		{D34BBE1C-748D-4D6D-860E-7433D3829184}.Release|x64.Build.0 = Release|x64
+		{D34BBE1C-748D-4D6D-860E-7433D3829184}.Release|x86.ActiveCfg = Release|Win32
+		{D34BBE1C-748D-4D6D-860E-7433D3829184}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

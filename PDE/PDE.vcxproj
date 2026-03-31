@@ -150,6 +150,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="PDEGrid2D.h" />
     <ClInclude Include="PDEGridExplicit.h" />
+    <ClInclude Include="PDEGridImplicit.h" />
     <ClInclude Include="PutBottomBoundary.h" />
     <ClInclude Include="PutTerminalCondition.h" />
     <ClInclude Include="PutTopBoundary.h" />
@@ -174,6 +175,7 @@
     <ClCompile Include="PDE.cpp" />
     <ClCompile Include="PDEGrid2D.cpp" />
     <ClCompile Include="PDEGridExplicit.cpp" />
+    <ClCompile Include="PDEGridImplicit.cpp" />
     <ClCompile Include="PutBottomBoundary.cpp" />
     <ClCompile Include="PutTerminalCondition.cpp" />
     <ClCompile Include="PutTopBoundary.cpp" />

@@ -24,6 +24,7 @@ void Heston::Simulate(double startTime, double endTime, size_t nbSteps)
 	for (auto p : this->Paths) delete p;
 	this->Paths.clear();
 	this->Paths.push_back(new SinglePath(startTime, endTime, nbSteps));
+	this->Paths.push_back(new SinglePath(startTime, endTime, nbSteps));
 
 	BrownianND W(this->Generator, 2, &this->CorrelationMatrix);
 	W.Simulate(startTime, endTime, nbSteps);
@@ -47,11 +48,12 @@ void Heston::Simulate(double startTime, double endTime, size_t nbSteps)
 		double dW1 = W1_path->GetState(t_curr) - W1_path->GetState(t_prev);
 		double dW2 = W2_path->GetState(t_curr) - W2_path->GetState(t_prev);
 
-		V += this->Kappa * (this->Theta - V) * dt + this->Sigma * std::sqrt(V) * dW2;
-		S += this->Mu * S * dt + std::sqrt(V) * S * dW1;
+		double v_max = std::max(V, 0.0001);
+		V += this->Kappa * (this->Theta - v_max) * dt + this->Sigma * std::sqrt(v_max) * dW2;
+		S += this->Mu * S * dt + std::sqrt(v_max) * S * dW1;
 
 		this->Paths[0]->InsertValue(S);
-		this->Paths[1]->InsertValue(V);
+		this->Paths[1]->InsertValue(std::max(V, 0.0001));
 
 	}
 }

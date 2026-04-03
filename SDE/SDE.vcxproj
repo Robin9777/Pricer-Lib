@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -140,19 +140,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BlackScholes1D.h" />
+    <ClInclude Include="BlackScholes2D.h" />
     <ClInclude Include="BrownianD1.h" />
     <ClInclude Include="BrownianND.h" />
     <ClInclude Include="BSEuler1D.h" />
+    <ClInclude Include="BSMilstein1D.h" />
+    <ClInclude Include="BSMilstein2D.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Heston.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RandomProcess.h" />
     <ClInclude Include="SinglePath.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BlackScholes1D.cpp" />
+    <ClCompile Include="BlackScholes2D.cpp" />
     <ClCompile Include="BrownianD1.cpp" />
     <ClCompile Include="BrownianND.cpp" />
     <ClCompile Include="BSEuler1D.cpp" />
+    <ClCompile Include="BSMilstein1D.cpp" />
+    <ClCompile Include="BSMilstein2D.cpp" />
+    <ClCompile Include="Heston.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

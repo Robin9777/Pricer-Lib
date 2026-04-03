@@ -146,6 +146,7 @@
     <ClInclude Include="CallTerminalCondition.h" />
     <ClInclude Include="CallTopBoundary.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="LVVariance.h" />
     <ClInclude Include="NullFunction.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PDEGrid2D.h" />
@@ -165,6 +166,7 @@
     <ClCompile Include="CallBottomBoundary.cpp" />
     <ClCompile Include="CallTerminalCondition.cpp" />
     <ClCompile Include="CallTopBoundary.cpp" />
+    <ClCompile Include="LVVariance.cpp" />
     <ClCompile Include="NullFunction.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -182,6 +184,11 @@
     <ClCompile Include="R1R1Function.cpp" />
     <ClCompile Include="R2R1Function.cpp" />
     <ClCompile Include="VanillaTerminalCondition.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VolSurf\VolSurf.vcxproj">
+      <Project>{234a211c-c8e4-4e10-8449-64e945fabba9}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

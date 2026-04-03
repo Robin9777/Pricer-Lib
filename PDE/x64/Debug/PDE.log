@@ -1,8 +1,19 @@
 ﻿  pch.cpp
+  BSActualization.cpp
+  BSTrend.cpp
+  BSVariance.cpp
+  CallBottomBoundary.cpp
   CallTerminalCondition.cpp
+  CallTopBoundary.cpp
+  LVVariance.cpp
   NullFunction.cpp
   PDE.cpp
+  PDEGrid2D.cpp
+  PDEGridExplicit.cpp
+  PDEGridImplicit.cpp
+  PutBottomBoundary.cpp
   PutTerminalCondition.cpp
+  PutTopBoundary.cpp
   R1R1Function.cpp
   R2R1Function.cpp
   VanillaTerminalCondition.cpp

@@ -6,6 +6,7 @@ class BrownianND :
 {
 
 protected:
+
     std::vector<std::vector<double>>* CorrelationMatrix;
     std::vector<std::vector<double>> cholesky(const std::vector<std::vector<double>>& matrix);
 

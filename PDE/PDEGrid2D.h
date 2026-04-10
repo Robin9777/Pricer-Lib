@@ -43,7 +43,7 @@ public:
         R1R1Function* _RightBoundaryFunction
     );
 
-    virtual void FillNodes();
+    virtual void FillNodes() = 0;
     double GetValue(double time, double spot);
 
 };

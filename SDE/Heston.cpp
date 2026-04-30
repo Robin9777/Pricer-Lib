@@ -30,7 +30,7 @@ void Heston::Simulate(double startTime, double endTime, size_t nbSteps)
 	W.Simulate(startTime, endTime, nbSteps);
 	SinglePath* W1_path = W.GetPath(0);
 	SinglePath* W2_path = W.GetPath(1);
-
+ 
 	double dt = (endTime - startTime) / nbSteps;
 
 	// Intiate process

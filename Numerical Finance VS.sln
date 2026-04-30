@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestPayoffs", "UnitTest
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestPricer", "UnitTestPricer\UnitTestPricer.vcxproj", "{B28D576F-7D7F-0718-7B2B-85BAD23278A3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VarRed", "VarRed\VarRed.vcxproj", "{9730458F-F8F9-4398-BE5E-ADDE381ECD70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{B28D576F-7D7F-0718-7B2B-85BAD23278A3}.Release|x64.Build.0 = Release|x64
 		{B28D576F-7D7F-0718-7B2B-85BAD23278A3}.Release|x86.ActiveCfg = Release|Win32
 		{B28D576F-7D7F-0718-7B2B-85BAD23278A3}.Release|x86.Build.0 = Release|Win32
+		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Debug|x64.ActiveCfg = Debug|x64
+		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Debug|x64.Build.0 = Debug|x64
+		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Debug|x86.ActiveCfg = Debug|Win32
+		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Debug|x86.Build.0 = Debug|Win32
+		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Release|x64.ActiveCfg = Release|x64
+		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Release|x64.Build.0 = Release|x64
+		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Release|x86.ActiveCfg = Release|Win32
+		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

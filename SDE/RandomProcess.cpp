@@ -11,3 +11,8 @@ SinglePath* RandomProcess::GetPath(int dimension)
 {
 	return this->Paths[dimension];
 }
+
+int RandomProcess::GetDimension() const
+{
+	return this->Dimension;
+}

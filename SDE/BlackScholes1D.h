@@ -12,5 +12,6 @@ protected:
 
 public:
     BlackScholes1D(RandomGenerator* Gen, double _spot, double _rate, double _vol);
+    double GetRate() const override { return Rate; }
 };
 

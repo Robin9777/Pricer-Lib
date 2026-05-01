@@ -15,5 +15,8 @@ public:
 	virtual void Simulate(double startTime, double endTime, size_t nbSteps) = 0;
 	SinglePath* GetPath(int dimension = 0);
 
+	int GetDimension() const;
+	virtual double GetRate() const { return 0.0; }
+
 };
 

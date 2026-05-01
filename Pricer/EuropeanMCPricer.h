@@ -26,4 +26,3 @@ public:
 	double Price();
 
 };
-

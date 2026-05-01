@@ -2,3 +2,8 @@
 .vs/
 *.opendb
 *.VC.db
+
+.vscode/
+.vs
+*.sln
+x64/Debug

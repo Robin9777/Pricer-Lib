@@ -25,7 +25,7 @@ double SinglePath::GetState(double time)
     return Values[index];
 }
 
-std::vector<double> SinglePath::GetAllValues()
+const std::vector<double>& SinglePath::GetAllValues() const
 {
 	return this->Values;
 }

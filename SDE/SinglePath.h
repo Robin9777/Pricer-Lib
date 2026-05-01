@@ -15,8 +15,7 @@ public:
 
 	// Getter
 	double GetState(double time);
-	std::vector<double> GetAllValues();
-
+	const std::vector<double>& GetAllValues() const;
 
 };
 

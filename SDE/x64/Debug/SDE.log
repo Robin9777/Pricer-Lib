@@ -1,2 +1,17 @@
-﻿  Heston.cpp
+﻿  pch.cpp
+  BlackScholes1D.cpp
+  BlackScholes2D.cpp
+  BrownianD1.cpp
+  BrownianND.cpp
+C:\SandBox\Numerical Finance\SDE\BrownianND.cpp(14,11): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+  (compiler le fichier source '/BrownianND.cpp')
+  
+  BSEuler1D.cpp
+  BSMilstein1D.cpp
+  BSMilstein2D.cpp
+  Heston.cpp
+  RandomProcess.cpp
+  SDE.cpp
+  SinglePath.cpp
+  Génération de code en cours...
   SDE.vcxproj -> C:\SandBox\Numerical Finance\x64\Debug\SDE.lib

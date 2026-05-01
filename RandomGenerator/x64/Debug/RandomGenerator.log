@@ -1,11 +1,11 @@
 ﻿  pch.cpp
   Bernoulli.cpp
   Binomial.cpp
+  ContinuousGenerator.cpp
 C:\SandBox\Numerical Finance\RandomGenerator\Binomial.cpp(16,23): warning C4244: '+=' : conversion de 'double' en 'unsigned int', perte possible de données
+  DiscreteGenerator.cpp
   (compiler le fichier source '/Binomial.cpp')
   
-  ContinuousGenerator.cpp
-  DiscreteGenerator.cpp
   dllmain.cpp
   EcuyerCombined.cpp
 C:\SandBox\Numerical Finance\RandomGenerator\EcuyerCombined.cpp(23,15): warning C4267: '+=' : conversion de 'size_t' en 'long', perte possible de données

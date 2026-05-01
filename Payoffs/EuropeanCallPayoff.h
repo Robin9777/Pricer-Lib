@@ -3,7 +3,14 @@
 class EuropeanCallPayoff :
     public PayOff
 {
+
+private:
+    double strike;
+
 public:
-    double operator()(PayOffTemplate PO_template) override;
+    EuropeanCallPayoff(double _strike);
+    double operator()(const std::vector<SinglePath*>& Paths) const override;
+
+
 };
 

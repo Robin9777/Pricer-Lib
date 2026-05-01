@@ -167,6 +167,14 @@
   <ItemGroup>
     <ClInclude Include="pch.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Payoffs\Payoffs.vcxproj">
+      <Project>{247c0282-d6c1-4e14-b6a4-1f37a7eb809e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Pricer\Pricer.vcxproj">
+      <Project>{96231955-d747-4ff4-b957-e228a8ddeaf4}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

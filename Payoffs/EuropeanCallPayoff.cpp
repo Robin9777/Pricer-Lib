@@ -2,8 +2,12 @@
 #include "EuropeanCallPayoff.h"
 #include <cmath>
 
-double EuropeanCallPayoff::operator()(PayOffTemplate PO_template)
+EuropeanCallPayoff::EuropeanCallPayoff(double _strike) : strike(_strike)
+{
+}
+
+double EuropeanCallPayoff::operator()(const std::vector<SinglePath*>& Paths) const
 {
     
-    return std::max(PO_template.Paths.back()->GetAllValues().back() - PO_template.strike, 0.0);
+    return std::max(Paths[0]->GetAllValues().back() - strike, 0.0);
 }

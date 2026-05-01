@@ -4,6 +4,6 @@
 *.VC.db
 
 .vscode/
-.vs
+.vs/
 *.sln
-x64/Debug
+x64/

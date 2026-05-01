@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="EuroCallBasketPayOff.h" />
     <ClInclude Include="EuropeanCallPayoff.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="PayOff.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EuroCallBasketPayOff.cpp" />
     <ClCompile Include="EuropeanCallPayoff.cpp" />
     <ClCompile Include="PayOff.cpp" />
     <ClCompile Include="Payoffs.cpp" />

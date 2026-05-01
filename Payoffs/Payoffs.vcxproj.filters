@@ -27,6 +27,9 @@
     <ClInclude Include="PayOff.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="EuroCallBasketPayOff.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Payoffs.cpp">
@@ -39,6 +42,9 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="PayOff.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="EuroCallBasketPayOff.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

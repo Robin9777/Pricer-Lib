@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include "../Pricer/EuropeanMCPricer.h"
+#include "../Pricer/BermudanPricer.h"
 #include "../Payoffs/EuropeanCallPayoff.h"
 #include "../Payoffs/EuroCallBasketPayOff.h"
 #include "../SDE/BSMilstein1D.h"
@@ -114,6 +115,67 @@ namespace UnitTestPricer
 			Logger::WriteMessage(msg.c_str());
 			
 			Assert::IsTrue(price > 0.0 && price < 15.0);
+		}
+
+		TEST_METHOD(TestBermudanCallPrice_1D_OneDate)
+		{
+			double spot = 100.0;
+			double rate = 0.05;
+			double vol = 0.2;
+			double strike = 100.0;
+			double maturity = 1.0;
+			size_t nbSim = 2000;
+			size_t nbSteps = 100;
+			
+			std::vector<double> exerciseDates = { maturity };
+
+			LinearCongruential unifGen1(42, 16807, 0, 2147483647);
+			Normal normGen1(0.0, 1.0, unifGen1);
+			BSMilstein1D bsProcess1(&normGen1, spot, rate, vol);
+			EuropeanCallPayoff payoffVanilla(strike);
+			
+			BermudanPricer pricerBermudan(&bsProcess1, &payoffVanilla, rate, maturity, nbSim, nbSteps, exerciseDates);
+			double priceBermudan = pricerBermudan.Price();
+
+			LinearCongruential unifGen2(42, 16807, 0, 2147483647);
+			Normal normGen2(0.0, 1.0, unifGen2);
+			BSMilstein1D bsProcess2(&normGen2, spot, rate, vol);
+			EuropeanMCPricer pricerEuropean(&bsProcess2, &payoffVanilla, rate, maturity, nbSim, nbSteps);
+			double priceEuropean = pricerEuropean.Price();
+
+			std::wstring msg = L"Bermudan (1 date) : " + std::to_wstring(priceBermudan) + L" | European : " + std::to_wstring(priceEuropean);
+			Logger::WriteMessage(msg.c_str());
+			
+			Assert::AreEqual(priceEuropean, priceBermudan, 1e-6);
+		}
+
+		TEST_METHOD(TestBermudanBasketPrice_2D)
+		{
+			LinearCongruential unifGen(42, 16807, 0, 2147483647);
+			Normal normGen(0.0, 1.0, unifGen);
+			
+			double spot1 = 100.0, spot2 = 100.0;
+			double rate = 0.05;
+			double vol1 = 0.2, vol2 = 0.2;
+			double rho = 0.5;
+			BSMilstein2D bsProcess(&normGen, spot1, spot2, rate, vol1, vol2, rho);
+			
+			double strike = 100.0;
+			std::vector<double> weights = { 0.5, 0.5 };
+			EuroCallBasketPayOff payoffBasket(strike, weights);
+			
+			double maturity = 1.0;
+			size_t nbSim = 2000;
+			size_t nbSteps = 100;
+			std::vector<double> exerciseDates = { 0.25, 0.5, 0.75, 1.0 };
+			
+			BermudanPricer pricerBermudan(&bsProcess, &payoffBasket, rate, maturity, nbSim, nbSteps, exerciseDates);
+			double priceBermudan = pricerBermudan.Price();
+			
+			std::wstring msg = L"Bermudan Basket 2D Price : " + std::to_wstring(priceBermudan);
+			Logger::WriteMessage(msg.c_str());
+			
+			Assert::IsTrue(priceBermudan > 0.0 && priceBermudan < 15.0);
 		}
 	};
 }

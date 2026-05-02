@@ -1,19 +1,11 @@
 #pragma once
 #include "../Payoffs/Payoff.h"
 #include "../SDE/RandomProcess.h"
+#include "MCPricer.h"
 
-class EuropeanMCPricer
+class EuropeanMCPricer :
+	public MCPricer
 {
-
-private:
-	RandomProcess* Process; // BSMilstein1D for Vanilla option
-	PayOff* Payoff; // EuropeanCallPayoff for Vanilla option
-	double rate;
-	double maturity;
-	size_t nbSim; // sim number
-	size_t nbSteps; // steps number
-	
-
 public:
 	EuropeanMCPricer(
 		RandomProcess* _process, 
@@ -24,6 +16,5 @@ public:
 		size_t _nbSteps
 	);
 
-	double Price();
-
+	double Price() override;
 };

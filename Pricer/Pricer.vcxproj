@@ -148,6 +148,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MCPricer.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="VarRedMCPricer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BermudanPricer.cpp" />
@@ -160,6 +161,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Pricer.cpp" />
+    <ClCompile Include="VarRedMCPricer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Payoffs\Payoffs.vcxproj">

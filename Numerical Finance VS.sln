@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestPricer", "UnitTestP
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VarRed", "VarRed\VarRed.vcxproj", "{9730458F-F8F9-4398-BE5E-ADDE381ECD70}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestVarRed", "UnitTestVarRed\UnitTestVarRed.vcxproj", "{CAF92D37-8486-42FF-EFC7-602E04C3E729}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +143,14 @@ Global
 		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Release|x64.Build.0 = Release|x64
 		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Release|x86.ActiveCfg = Release|Win32
 		{9730458F-F8F9-4398-BE5E-ADDE381ECD70}.Release|x86.Build.0 = Release|Win32
+		{CAF92D37-8486-42FF-EFC7-602E04C3E729}.Debug|x64.ActiveCfg = Debug|x64
+		{CAF92D37-8486-42FF-EFC7-602E04C3E729}.Debug|x64.Build.0 = Debug|x64
+		{CAF92D37-8486-42FF-EFC7-602E04C3E729}.Debug|x86.ActiveCfg = Debug|Win32
+		{CAF92D37-8486-42FF-EFC7-602E04C3E729}.Debug|x86.Build.0 = Debug|Win32
+		{CAF92D37-8486-42FF-EFC7-602E04C3E729}.Release|x64.ActiveCfg = Release|x64
+		{CAF92D37-8486-42FF-EFC7-602E04C3E729}.Release|x64.Build.0 = Release|x64
+		{CAF92D37-8486-42FF-EFC7-602E04C3E729}.Release|x86.ActiveCfg = Release|Win32
+		{CAF92D37-8486-42FF-EFC7-602E04C3E729}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

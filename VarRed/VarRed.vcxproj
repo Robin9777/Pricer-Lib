@@ -139,10 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BasketGeomControlVariate.h" />
+    <ClInclude Include="BSClosedForm.h" />
+    <ClInclude Include="ControlVariate.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BasketGeomControlVariate.cpp" />
+    <ClCompile Include="BSClosedForm.cpp" />
+    <ClCompile Include="ControlVariate.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -150,6 +156,20 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="VarRed.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Payoffs\Payoffs.vcxproj">
+      <Project>{247c0282-d6c1-4e14-b6a4-1f37a7eb809e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Pricer\Pricer.vcxproj">
+      <Project>{96231955-d747-4ff4-b957-e228a8ddeaf4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\RandomGenerator\RandomGenerator.vcxproj">
+      <Project>{2ee55530-5fdb-4076-944b-465bb61fc157}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SDE\SDE.vcxproj">
+      <Project>{d34bbe1c-748d-4d6d-860e-7433d3829184}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

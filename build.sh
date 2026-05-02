@@ -7,9 +7,12 @@ cd "$ROOT"
 OUT_TESTS="$ROOT/tests/run_tests"
 OUT_ND="$ROOT/tests/run_tests_nd"
 OUT_QMC="$ROOT/tests/run_tests_qmc"
+OUT_VR="$ROOT/tests/run_tests_varred_compare"
+OUT_AT="$ROOT/tests/run_tests_antithetic"
+OUT_FC="$ROOT/tests/run_tests_full_comparison"
 
 if [ "${1:-}" = "clean" ]; then
-    rm -f "$OUT_TESTS" "$OUT_ND" "$OUT_QMC"
+    rm -f "$OUT_TESTS" "$OUT_ND" "$OUT_QMC" "$OUT_VR" "$OUT_AT" "$OUT_FC"
     echo "Cleaned."
     exit 0
 fi
@@ -34,6 +37,7 @@ LIB_SOURCES=(
     RandomGenerator/FiniteSet.cpp
     RandomGenerator/HeadTail.cpp
     RandomGenerator/HaltonGenerator.cpp
+    RandomGenerator/AntitheticNormal.cpp
 
     # SDE
     SDE/SinglePath.cpp
@@ -58,6 +62,13 @@ LIB_SOURCES=(
     Pricer/MCPricer.cpp
     Pricer/EuropeanMCPricer.cpp
     Pricer/BermudanPricer.cpp
+    Pricer/VarRedMCPricer.cpp
+    Pricer/AntitheticMCPricer.cpp
+
+    # VarRed
+    VarRed/BSClosedForm.cpp
+    VarRed/BasketGeomControlVariate.cpp
+    VarRed/ControlVariate.cpp
 )
 
 FLAGS="-std=c++17 -O2 -I."
@@ -94,3 +105,33 @@ clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_qmc.cpp -o "$OUT_QMC"
 echo ""
 echo "--- tests/run_tests_qmc ---"
 "$OUT_QMC"
+
+# ---------------------------------------------------------------------------
+# Build 4: Variance reduction comparison -> tests/run_tests_varred_compare
+# ---------------------------------------------------------------------------
+echo "Compiling tests/run_tests_varred_compare..."
+clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_varred_compare.cpp -o "$OUT_VR"
+
+echo ""
+echo "--- tests/run_tests_varred_compare ---"
+"$OUT_VR"
+
+# ---------------------------------------------------------------------------
+# Build 5: Antithetic variables -> tests/run_tests_antithetic
+# ---------------------------------------------------------------------------
+echo "Compiling tests/run_tests_antithetic..."
+clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_antithetic.cpp -o "$OUT_AT"
+
+echo ""
+echo "--- tests/run_tests_antithetic ---"
+"$OUT_AT"
+
+# ---------------------------------------------------------------------------
+# Build 6: Full variance reduction comparison -> tests/run_tests_full_comparison
+# ---------------------------------------------------------------------------
+echo "Compiling tests/run_tests_full_comparison..."
+clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_full_comparison.cpp -o "$OUT_FC"
+
+echo ""
+echo "--- tests/run_tests_full_comparison ---"
+"$OUT_FC"

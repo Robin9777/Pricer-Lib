@@ -241,13 +241,75 @@ In practice, for a European call payoff, the reduction is much smaller for two r
 
 ---
 
-## 8. Test Executables
+## 8. Antithetic Variables
+
+**`AntitheticMCPricer`** reduces variance by pairing each simulation with its antithetic counterpart.
+
+**Algorithm:**
+For each of N pairs:
+1. Simulate a path using Z₁, Z₂, ..., Z_k (the normal draws) → payoff Y
+2. Simulate the antithetic path using −Z₁, −Z₂, ..., −Z_k → payoff Y_anti
+3. Estimator for this pair: Ỹ = (Y + Y_anti) / 2
+
+**Why it works:**
+```
+Var(Ỹ) = ¼ · (Var(Y) + Var(Y_anti) + 2·Cov(Y, Y_anti))
+       = ½ · Var(Y) · (1 + ρ)
+```
+where ρ = Corr(Y(Z), Y(−Z)). For a monotone increasing payoff (European call), Y(Z) and Y(−Z) are negatively correlated (ρ < 0), so Var(Ỹ) < ½·Var(Y). In practice ρ ≈ −0.5 to −0.6 for ATM calls → 65–80% variance reduction.
+
+**Implementation:**
+
+`AntitheticNormal` wraps a `Normal` generator and acts as the `RandomGenerator*` for the process:
+- **Normal pass** (`antithetic=false`): calls the inner `Normal`, stores each Z in a buffer, returns Z
+- **Antithetic pass** (`antithetic=true`): replays the buffer returning −Z values
+
+`AntitheticMCPricer` controls the mode between passes:
+```cpp
+// For each of nbSim pairs:
+antiNorm.ResetBuffer();   antiNorm.SetAntithetic(false);
+proc.Simulate(...);       // draws Z values → stored in buffer
+double y = discount * payoff(paths);
+
+antiNorm.ResetIndex();    antiNorm.SetAntithetic(true);
+proc.Simulate(...);       // replays -Z values from buffer
+double y_anti = discount * payoff(paths);
+
+avg = 0.5 * (y + y_anti);
+```
+
+**Observed variance reduction (N=10,000, nsteps=50):**
+
+| Configuration | Plain MC var | Antithetic var | Reduction |
+|---|---|---|---|
+| 1D call σ=0.2 | 225 | 56 | **75%** |
+| 1D call σ=0.4 | 1031 | 343 | **67%** |
+| 2D basket equal w | 146 | 32 | **78%** |
+| 2D basket w={0.7,0.3} | 157 | 36 | **77%** |
+| 3D basket equal w | 120 | 24 | **80%** |
+| 3D basket w={0.6,0.3,0.1} | 137 | 30 | **79%** |
+
+Higher correlation between assets → more effective antithetic (reduction improves for baskets vs single asset).
+
+**Comparison of all three variance reduction techniques:**
+
+| Technique | Typical reduction | Works for | Requirement |
+|---|---|---|---|
+| QMC (Halton) | 1–3% | Any payoff | nsteps must be small |
+| Antithetic variables | 65–80% | Monotone payoffs | Payoff monotone in Z |
+| Static control variate | 95–99% | Basket calls | Needs analytical E[CV] |
+
+---
+
+## 9. Test Executables
 
 | Executable | Source | What it tests |
 |---|---|---|
 | `tests/run_tests` | `tests/test_main.cpp` | LinearCongruential, Normal, BSMilstein1D/2D, payoffs, EuropeanMCPricer, BermudanPricer |
 | `tests/run_tests_nd` | `tests/test_milstein_nd.cpp` | BSMilsteinND: N=1,2,3 path properties, identity with BSMilstein1D/2D, basket pricing, Bermudan N=2,3 |
-| `tests/run_tests_qmc` | `tests/test_qmc.cpp` | Quasi vs pseudo variance comparison for all configurations |
+| `tests/run_tests_qmc` | `tests/test_qmc.cpp` | Quasi vs pseudo variance comparison (nsteps=1) |
+| `tests/run_tests_varred_compare` | `tests/test_varred_compare.cpp` | Static CV vs plain MC (nsteps=50, 1D/2D/3D, various weights and vols) |
+| `tests/run_tests_antithetic` | `tests/test_antithetic.cpp` | Antithetic variables vs plain MC (nsteps=50, 1D/2D/3D, various configs) |
 
 Run all:
 ```bash
@@ -256,12 +318,12 @@ Run all:
 
 Run one:
 ```bash
-./tests/run_tests_qmc
+./tests/run_tests_antithetic
 ```
 
 ---
 
-## 9. Files Added / Modified
+## 10. Files Added / Modified
 
 | File | Change |
 |---|---|
@@ -275,5 +337,12 @@ Run one:
 | `tests/test_main.cpp` | Core test suite (17 tests) |
 | `tests/test_milstein_nd.cpp` | BSMilsteinND test suite (17 tests) |
 | `tests/test_qmc.cpp` | QMC variance comparison (12 tests) |
+| `RandomGenerator/AntitheticNormal.h/.cpp` | Antithetic normal generator (wraps Normal, buffers/negates Z) |
+| `Pricer/AntitheticMCPricer.h/.cpp` | Antithetic variables pricer |
+| `VarRed/BasketGeomControlVariate.cpp` | Fixed: sqrt(varGeom) and drift adjustment in AnalyticalExpectation |
+| `VarRed/BSClosedForm.cpp` | Fixed: added `<algorithm>` for std::max on Mac |
+| `Pricer/VarRedMCPricer.cpp` | Fixed: discount cvValue to match scale of cvExpectation |
+| `tests/test_varred_compare.cpp` | Static CV vs plain MC (7 basket configs, nsteps=50) |
+| `tests/test_antithetic.cpp` | Antithetic vs plain MC (8 configs, nsteps=50) |
 | `build.sh` | Mac build script |
 | `README.md` | Updated with Mac build instructions |

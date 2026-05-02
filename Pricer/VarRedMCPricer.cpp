@@ -23,10 +23,8 @@ PriceResult VarRedMCPricer::Price()
 		for (int d = 0; d < Process->GetDimension(); ++d)
 			paths.push_back(Process->GetPath(d));
 
-		// Static control variate
-		double cvValue = CV->SimulatedValue(paths);
-
 		double discountedPayoff = std::exp(-rate * maturity) * (*Payoff)(paths);
+		double cvValue = std::exp(-rate * maturity) * CV->SimulatedValue(paths);
 		double adjustedPayoff = discountedPayoff - cvValue + cvExpectation;
 
 		totalPayoff += adjustedPayoff;

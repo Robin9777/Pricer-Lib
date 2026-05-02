@@ -7,7 +7,7 @@ EuropeanMCPricer::EuropeanMCPricer(RandomProcess* _process, PayOff* _payoff, dou
 {
 }
 
-double EuropeanMCPricer::Price()
+PriceResult EuropeanMCPricer::Price()
 {
 
 	double totalPayoff = 0.0;
@@ -31,5 +31,5 @@ double EuropeanMCPricer::Price()
 
 	double averagePrice = totalPayoff / static_cast<double>(nbSim);
 	double variance = (squaredPayoff / static_cast<double>(nbSim)) - (averagePrice * averagePrice);
-	return averagePrice;
+	return {averagePrice, 1.96 * std::sqrt(variance / static_cast<double>(nbSim))};
 }

@@ -66,9 +66,9 @@ Eigen::VectorXd BermudanPricer::regressionFit(const std::vector<std::vector<doub
     return Phi.colPivHouseholderQr().solve(Yvec);
 }
 
-double BermudanPricer::Price() {
+PriceResult BermudanPricer::Price() {
     int nDates = exerciseDates.size();
-    if (nDates == 0) return 0.0;
+    if (nDates == 0) return {0.0, 0.0};
     
     int D = Process->GetDimension();
 
@@ -169,5 +169,5 @@ double BermudanPricer::Price() {
 
     double averagePrice = sum / static_cast<double>(nbSim);
     double variance = (sumSq / static_cast<double>(nbSim)) - (averagePrice * averagePrice);
-    return averagePrice;
+    return {averagePrice, 1.96 * std::sqrt(variance / static_cast<double>(nbSim))};
 }

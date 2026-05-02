@@ -16,5 +16,5 @@ public:
 		size_t _nbSteps
 	);
 
-	double Price() override;
+	PriceResult Price() override;
 };

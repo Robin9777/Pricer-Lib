@@ -10,3 +10,4 @@ MCPricer::MCPricer(RandomProcess* _process, PayOff* _payoff, double _rate, doubl
 	nbSteps(_nbSteps)
 {
 }
+

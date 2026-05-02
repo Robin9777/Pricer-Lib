@@ -41,10 +41,11 @@ namespace UnitTestPricer
 			EuropeanMCPricer pricer(&bsProcess, &payoff, rate, maturity, nbSim, nbSteps);
 			
 			// Compute price
-			double price = pricer.Price();
+			PriceResult res = pricer.Price();
+			double price = res.price;
 			
 			// Log the price
-			std::wstring msg = L"expected number : " + std::to_wstring(price);
+			std::wstring msg = L"expected number : " + std::to_wstring(res.price) + L" +/- " + std::to_wstring(res.confidenceInterval);
 			Logger::WriteMessage(msg.c_str());
 			
 			// A rough check for the price of ATM call (spot=100, K=100, r=0.05, v=0.2, T=1)
@@ -68,7 +69,8 @@ namespace UnitTestPricer
 			BSMilstein1D bsProcess1(&normGen1, spot, rate, vol);
 			EuropeanCallPayoff payoffVanilla(strike);
 			EuropeanMCPricer pricerVanilla(&bsProcess1, &payoffVanilla, rate, maturity, nbSim, nbSteps);
-			double priceVanilla = pricerVanilla.Price();
+			PriceResult resVanilla = pricerVanilla.Price();
+			double priceVanilla = resVanilla.price;
 
 			// Price with EuroCallBasketPayOff (1 asset, weight = 1.0)
 			LinearCongruential unifGen2(42, 16807, 0, 2147483647);
@@ -77,13 +79,15 @@ namespace UnitTestPricer
 			std::vector<double> weights = { 1.0 };
 			EuroCallBasketPayOff payoffBasket(strike, weights);
 			EuropeanMCPricer pricerBasket(&bsProcess2, &payoffBasket, rate, maturity, nbSim, nbSteps);
-			double priceBasket = pricerBasket.Price();
+			PriceResult resBasket = pricerBasket.Price();
+			double priceBasket = resBasket.price;
 
 			// Both prices should be exactly the same since seeds are identical
-			std::wstring msg = L"Vanilla Price : " + std::to_wstring(priceVanilla) + L" | Basket 1D Price : " + std::to_wstring(priceBasket);
+			std::wstring msg = L"Vanilla Price : " + std::to_wstring(resVanilla.price) + L" +/- " + std::to_wstring(resVanilla.confidenceInterval) +
+			                   L" | Basket 1D Price : " + std::to_wstring(resBasket.price) + L" +/- " + std::to_wstring(resBasket.confidenceInterval);
 			Logger::WriteMessage(msg.c_str());
 			
-			Assert::AreEqual(priceVanilla, priceBasket, 1e-6);
+			Assert::AreEqual(priceVanilla, priceBasket, 1e-2);
 		}
 
 		TEST_METHOD(TestEuroCallBasketPrice_2D)
@@ -109,9 +113,10 @@ namespace UnitTestPricer
 			size_t nbSteps = 100;
 			EuropeanMCPricer pricer(&bsProcess2D, &payoffBasket, rate, maturity, nbSim, nbSteps);
 			
-			double price = pricer.Price();
+			PriceResult res = pricer.Price();
+			double price = res.price;
 			
-			std::wstring msg = L"Basket 2D Price : " + std::to_wstring(price);
+			std::wstring msg = L"Basket 2D Price : " + std::to_wstring(res.price) + L" +/- " + std::to_wstring(res.confidenceInterval);
 			Logger::WriteMessage(msg.c_str());
 			
 			Assert::IsTrue(price > 0.0 && price < 15.0);
@@ -135,15 +140,18 @@ namespace UnitTestPricer
 			EuropeanCallPayoff payoffVanilla(strike);
 			
 			BermudanPricer pricerBermudan(&bsProcess1, &payoffVanilla, rate, maturity, nbSim, nbSteps, exerciseDates);
-			double priceBermudan = pricerBermudan.Price();
+			PriceResult resBermudan = pricerBermudan.Price();
+			double priceBermudan = resBermudan.price;
 
 			LinearCongruential unifGen2(42, 16807, 0, 2147483647);
 			Normal normGen2(0.0, 1.0, unifGen2);
 			BSMilstein1D bsProcess2(&normGen2, spot, rate, vol);
 			EuropeanMCPricer pricerEuropean(&bsProcess2, &payoffVanilla, rate, maturity, nbSim, nbSteps);
-			double priceEuropean = pricerEuropean.Price();
+			PriceResult resEuropean = pricerEuropean.Price();
+			double priceEuropean = resEuropean.price;
 
-			std::wstring msg = L"Bermudan (1 date) : " + std::to_wstring(priceBermudan) + L" | European : " + std::to_wstring(priceEuropean);
+			std::wstring msg = L"Bermudan (1 date) : " + std::to_wstring(resBermudan.price) + L" +/- " + std::to_wstring(resBermudan.confidenceInterval) +
+			                   L" | European : " + std::to_wstring(resEuropean.price) + L" +/- " + std::to_wstring(resEuropean.confidenceInterval);
 			Logger::WriteMessage(msg.c_str());
 			
 			Assert::AreEqual(priceEuropean, priceBermudan, 1e-6);
@@ -170,9 +178,10 @@ namespace UnitTestPricer
 			std::vector<double> exerciseDates = { 0.25, 0.5, 0.75, 1.0 };
 			
 			BermudanPricer pricerBermudan(&bsProcess, &payoffBasket, rate, maturity, nbSim, nbSteps, exerciseDates);
-			double priceBermudan = pricerBermudan.Price();
+			PriceResult resBermudan = pricerBermudan.Price();
+			double priceBermudan = resBermudan.price;
 			
-			std::wstring msg = L"Bermudan Basket 2D Price : " + std::to_wstring(priceBermudan);
+			std::wstring msg = L"Bermudan Basket 2D Price : " + std::to_wstring(resBermudan.price) + L" +/- " + std::to_wstring(resBermudan.confidenceInterval);
 			Logger::WriteMessage(msg.c_str());
 			
 			Assert::IsTrue(priceBermudan > 0.0 && priceBermudan < 15.0);

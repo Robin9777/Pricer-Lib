@@ -20,7 +20,7 @@ private:
 
 public:
     BermudanPricer(RandomProcess* _process, PayOff* _payoff, double _rate, double _maturity, size_t _nbSim, size_t _nbSteps, const std::vector<double>& _exerciseDates);
-    double Price() override;
+    PriceResult Price() override;
     virtual ~BermudanPricer();
 
 };

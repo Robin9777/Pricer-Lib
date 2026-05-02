@@ -54,6 +54,12 @@ double BasketGeomControlVariate::AnalyticalExpectation() const
 		geomSpot *= std::pow(Spots[i], Weights[i]);
 	}
 
+	// Drift adjustment: d(log G) = (r - 0.5*sum(w_i*sig_i^2))*dt + sig_G*dW
+	// BS formula assumes (r - 0.5*sig_G^2)*dt, so absorb the difference into spot
+	double sumWiSigI2 = 0.0;
+	for (size_t i = 0; i < Spots.size(); ++i)
+		sumWiSigI2 += Weights[i] * Vols[i] * Vols[i];
+	double geomSpotAdj = geomSpot * std::exp(0.5 * (varGeom - sumWiSigI2) * maturity);
 
-    return bs.CallPrice(geomSpot, strike, rate, varGeom, maturity);
+    return bs.CallPrice(geomSpotAdj, strike, rate, std::sqrt(varGeom), maturity);
 }

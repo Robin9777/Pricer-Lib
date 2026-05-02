@@ -7,3 +7,10 @@
 .vs/
 *.sln
 x64/
+CLAUDE.md
+README.mdtests/run_tests
+tests/run_tests_nd
+tests/run_tests_qmc
+tests/run_tests_varred_compare
+tests/run_tests_antithetic
+tests/run_tests_full_comparison

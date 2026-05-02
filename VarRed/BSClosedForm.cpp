@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "BSClosedForm.h"
 #include <cmath>
+#include <algorithm>
 #include <stdexcept>
 
 double BSClosedForm::NormalCDF(double x) const

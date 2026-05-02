@@ -5,6 +5,7 @@
 #include "../Payoffs/EuroCallBasketPayOff.h"
 #include "../SDE/BSMilstein2D.h"
 #include "../RandomGenerator/LinearCongruential.h"
+#include "../RandomGenerator/EcuyerCombined.h"
 #include "../RandomGenerator/Normal.h"
 #include "../VarRed/BasketGeomControlVariate.h"
 #include <string>
@@ -37,14 +38,18 @@ namespace UnitTestVarRed
 			BasketGeomControlVariate cvBasket(weights, spots, correlMatrix, vols, maturity, strike, rate);
 			
 			// Vanilla MC
-			LinearCongruential unifGen1(42, 16807, 0, 2147483647);
+			LinearCongruential unifGen1A(42, 40014, 0, 2147483563);
+			LinearCongruential unifGen1B(42, 40692, 0, 2147483399);
+			EcuyerCombined unifGen1(unifGen1A, unifGen1B);
 			Normal normGen1(0.0, 1.0, unifGen1);
 			BSMilstein2D bsProcess1(&normGen1, spot1, spot2, rate, vol1, vol2, rho);
 			EuropeanMCPricer pricerVanilla(&bsProcess1, &payoffBasket, rate, maturity, nbSim, nbSteps);
 			PriceResult resVanilla = pricerVanilla.Price();
 			
 			// VarRed MC
-			LinearCongruential unifGen2(42, 16807, 0, 2147483647);
+			LinearCongruential unifGen2A(42, 40014, 0, 2147483563);
+			LinearCongruential unifGen2B(42, 40692, 0, 2147483399);
+			EcuyerCombined unifGen2(unifGen2A, unifGen2B);
 			Normal normGen2(0.0, 1.0, unifGen2);
 			BSMilstein2D bsProcess2(&normGen2, spot1, spot2, rate, vol1, vol2, rho);
 			VarRedMCPricer pricerVarRed(&bsProcess2, &payoffBasket, &cvBasket, rate, maturity, nbSim, nbSteps);

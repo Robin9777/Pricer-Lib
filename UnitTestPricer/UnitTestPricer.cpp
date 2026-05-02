@@ -7,6 +7,7 @@
 #include "../SDE/BSMilstein1D.h"
 #include "../SDE/BSMilstein2D.h"
 #include "../RandomGenerator/LinearCongruential.h"
+#include "../RandomGenerator/EcuyerCombined.h"
 #include "../RandomGenerator/Normal.h"
 #include <string>
 
@@ -21,7 +22,9 @@ namespace UnitTestPricer
 		TEST_METHOD(TestEuropeanCallPrice)
 		{
 			// Setup random generators
-			LinearCongruential unifGen(42, 16807, 0, 2147483647);
+			LinearCongruential unifGenA(42, 40014, 0, 2147483563);
+			LinearCongruential unifGenB(42, 40692, 0, 2147483399);
+			EcuyerCombined unifGen(unifGenA, unifGenB);
 			Normal normGen(0.0, 1.0, unifGen);
 			
 			// Setup Black Scholes process
@@ -64,7 +67,9 @@ namespace UnitTestPricer
 			size_t nbSteps = 100;
 
 			// Price with standard EuropeanCallPayoff
-			LinearCongruential unifGen1(42, 16807, 0, 2147483647);
+			LinearCongruential unifGen1A(42, 40014, 0, 2147483563);
+			LinearCongruential unifGen1B(42, 40692, 0, 2147483399);
+			EcuyerCombined unifGen1(unifGen1A, unifGen1B);
 			Normal normGen1(0.0, 1.0, unifGen1);
 			BSMilstein1D bsProcess1(&normGen1, spot, rate, vol);
 			EuropeanCallPayoff payoffVanilla(strike);
@@ -73,7 +78,9 @@ namespace UnitTestPricer
 			double priceVanilla = resVanilla.price;
 
 			// Price with EuroCallBasketPayOff (1 asset, weight = 1.0)
-			LinearCongruential unifGen2(42, 16807, 0, 2147483647);
+			LinearCongruential unifGen2A(42, 40014, 0, 2147483563);
+			LinearCongruential unifGen2B(42, 40692, 0, 2147483399);
+			EcuyerCombined unifGen2(unifGen2A, unifGen2B);
 			Normal normGen2(0.0, 1.0, unifGen2);
 			BSMilstein1D bsProcess2(&normGen2, spot, rate, vol);
 			std::vector<double> weights = { 1.0 };
@@ -92,7 +99,9 @@ namespace UnitTestPricer
 
 		TEST_METHOD(TestEuroCallBasketPrice_2D)
 		{
-			LinearCongruential unifGen(42, 16807, 0, 2147483647);
+			LinearCongruential unifGenA(42, 40014, 0, 2147483563);
+			LinearCongruential unifGenB(42, 40692, 0, 2147483399);
+			EcuyerCombined unifGen(unifGenA, unifGenB);
 			Normal normGen(0.0, 1.0, unifGen);
 			
 			double spot1 = 100.0;
@@ -134,7 +143,9 @@ namespace UnitTestPricer
 			
 			std::vector<double> exerciseDates = { maturity };
 
-			LinearCongruential unifGen1(42, 16807, 0, 2147483647);
+			LinearCongruential unifGen1A(42, 40014, 0, 2147483563);
+			LinearCongruential unifGen1B(42, 40692, 0, 2147483399);
+			EcuyerCombined unifGen1(unifGen1A, unifGen1B);
 			Normal normGen1(0.0, 1.0, unifGen1);
 			BSMilstein1D bsProcess1(&normGen1, spot, rate, vol);
 			EuropeanCallPayoff payoffVanilla(strike);
@@ -143,7 +154,9 @@ namespace UnitTestPricer
 			PriceResult resBermudan = pricerBermudan.Price();
 			double priceBermudan = resBermudan.price;
 
-			LinearCongruential unifGen2(42, 16807, 0, 2147483647);
+			LinearCongruential unifGen2A(42, 40014, 0, 2147483563);
+			LinearCongruential unifGen2B(42, 40692, 0, 2147483399);
+			EcuyerCombined unifGen2(unifGen2A, unifGen2B);
 			Normal normGen2(0.0, 1.0, unifGen2);
 			BSMilstein1D bsProcess2(&normGen2, spot, rate, vol);
 			EuropeanMCPricer pricerEuropean(&bsProcess2, &payoffVanilla, rate, maturity, nbSim, nbSteps);
@@ -159,7 +172,9 @@ namespace UnitTestPricer
 
 		TEST_METHOD(TestBermudanBasketPrice_2D)
 		{
-			LinearCongruential unifGen(42, 16807, 0, 2147483647);
+			LinearCongruential unifGenA(42, 40014, 0, 2147483563);
+			LinearCongruential unifGenB(42, 40692, 0, 2147483399);
+			EcuyerCombined unifGen(unifGenA, unifGenB);
 			Normal normGen(0.0, 1.0, unifGen);
 			
 			double spot1 = 100.0, spot2 = 100.0;

@@ -11,6 +11,7 @@ double EuropeanMCPricer::Price()
 {
 
 	double totalPayoff = 0.0;
+	double squaredPayoff = 0.0;
 
 
 	for (size_t sim = 0; sim < nbSim; ++sim)
@@ -22,9 +23,13 @@ double EuropeanMCPricer::Price()
 		for (int d = 0; d < Process->GetDimension(); ++d)
 			paths.push_back(Process->GetPath(d));
 
-		totalPayoff += (*Payoff)(paths);
+		double discountedPayoff = std::exp(-rate * maturity) * (*Payoff)(paths);
+
+		totalPayoff += discountedPayoff;
+		squaredPayoff += discountedPayoff * discountedPayoff;
 	}
 
-	double avgPayoff = totalPayoff / static_cast<double>(nbSim);
-	return std::exp(-rate * maturity) * avgPayoff;
+	double averagePrice = totalPayoff / static_cast<double>(nbSim);
+	double variance = (squaredPayoff / static_cast<double>(nbSim)) - (averagePrice * averagePrice);
+	return averagePrice;
 }

@@ -160,9 +160,14 @@ double BermudanPricer::Price() {
 
     double discount0 = std::exp(-rate * exerciseDates[0]);
     double sum = 0.0;
+	double sumSq = 0.0;
     for (size_t sim = 0; sim < nbSim; ++sim) {
-        sum += V[sim] * discount0;
+        double discountedValue = V[sim] * discount0;
+        sum += discountedValue;
+        sumSq += discountedValue * discountedValue;
     }
 
-    return sum / static_cast<double>(nbSim);
+    double averagePrice = sum / static_cast<double>(nbSim);
+    double variance = (sumSq / static_cast<double>(nbSim)) - (averagePrice * averagePrice);
+    return averagePrice;
 }

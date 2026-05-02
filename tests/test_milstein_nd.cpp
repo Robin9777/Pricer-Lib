@@ -170,7 +170,7 @@ void test_n3_basket_pricing() {
     EuroCallBasketPayOff payoff(100.0, {1.0/3.0, 1.0/3.0, 1.0/3.0});
     EuropeanMCPricer pricer(&proc, &payoff, 0.05, 1.0, 10000, 252);
 
-    double price = pricer.Price();
+    double price = pricer.Price().price;
     // ATM call, correlation reduces vol slightly vs independent, price should
     // still be in a plausible range around the 1D BS price (~10.45)
     check(price > 5.0 && price < 15.0, "N=3 basket: ATM price in [5.0, 15.0]");
@@ -192,7 +192,7 @@ void test_bermudan_nd_2assets() {
     BSMilsteinND proc1(&norm1, {100.0, 100.0}, rate, {0.2, 0.2}, {{1.0, 0.3},{0.3, 1.0}});
     EuroCallBasketPayOff payoff1(strike, {0.5, 0.5});
     EuropeanMCPricer european(&proc1, &payoff1, rate, maturity, 5000, 252);
-    double europeanPrice = european.Price();
+    double europeanPrice = european.Price().price;
 
     // Bermudan basket price
     LinearCongruential u2(SEED, A, C, M);
@@ -200,7 +200,7 @@ void test_bermudan_nd_2assets() {
     BSMilsteinND proc2(&norm2, {100.0, 100.0}, rate, {0.2, 0.2}, {{1.0, 0.3},{0.3, 1.0}});
     EuroCallBasketPayOff payoff2(strike, {0.5, 0.5});
     BermudanPricer bermudan(&proc2, &payoff2, rate, maturity, 5000, 252, exerciseDates);
-    double bermudanPrice = bermudan.Price();
+    double bermudanPrice = bermudan.Price().price;
 
     check(bermudanPrice > 0.0,               "Bermudan N=2: price > 0");
     check(bermudanPrice < 25.0,              "Bermudan N=2: price in plausible range");
@@ -220,7 +220,7 @@ void test_bermudan_nd_3assets() {
     EuroCallBasketPayOff payoff(100.0, {1.0/3.0, 1.0/3.0, 1.0/3.0});
     BermudanPricer bermudan(&proc, &payoff, 0.05, 1.0, 5000, 252,
                             {0.25, 0.5, 0.75, 1.0});
-    double price = bermudan.Price();
+    double price = bermudan.Price().price;
 
     check(price > 0.0 && price < 25.0, "Bermudan N=3: price in plausible range");
 }

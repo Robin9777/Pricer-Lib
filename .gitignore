@@ -8,4 +8,6 @@
 *.sln
 x64/
 CLAUDE.md
-README.md
+README.mdtests/run_tests
+tests/run_tests_nd
+tests/run_tests_qmc

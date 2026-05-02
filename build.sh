@@ -6,9 +6,10 @@ cd "$ROOT"
 
 OUT_TESTS="$ROOT/tests/run_tests"
 OUT_ND="$ROOT/tests/run_tests_nd"
+OUT_QMC="$ROOT/tests/run_tests_qmc"
 
 if [ "${1:-}" = "clean" ]; then
-    rm -f "$OUT_TESTS" "$OUT_ND"
+    rm -f "$OUT_TESTS" "$OUT_ND" "$OUT_QMC"
     echo "Cleaned."
     exit 0
 fi
@@ -32,6 +33,7 @@ LIB_SOURCES=(
     RandomGenerator/Poisson.cpp
     RandomGenerator/FiniteSet.cpp
     RandomGenerator/HeadTail.cpp
+    RandomGenerator/HaltonGenerator.cpp
 
     # SDE
     SDE/SinglePath.cpp
@@ -82,3 +84,13 @@ echo "--- tests/run_tests ---"
 echo ""
 echo "--- tests/run_tests_nd ---"
 "$OUT_ND"
+
+# ---------------------------------------------------------------------------
+# Build 3: QMC variance reduction tests -> tests/run_tests_qmc
+# ---------------------------------------------------------------------------
+echo "Compiling tests/run_tests_qmc..."
+clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_qmc.cpp -o "$OUT_QMC"
+
+echo ""
+echo "--- tests/run_tests_qmc ---"
+"$OUT_QMC"

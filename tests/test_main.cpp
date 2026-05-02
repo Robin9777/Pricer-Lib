@@ -178,8 +178,8 @@ void test_european_mc_pricer() {
     EuropeanCallPayoff payoff(100.0);
     EuropeanMCPricer pricer(&process, &payoff, 0.05, 1.0, 10000, 252);
 
-    double price = pricer.Price();
-    check(price > 9.0 && price < 12.0, "EuropeanMCPricer: ATM call price in [9.0, 12.0]");
+    auto result = pricer.Price();
+    check(result.price > 9.0 && result.price < 12.0, "EuropeanMCPricer: ATM call price in [9.0, 12.0]");
 }
 
 void test_bermudan_pricer() {
@@ -191,8 +191,8 @@ void test_bermudan_pricer() {
     std::vector<double> exerciseDates = {0.25, 0.5, 0.75, 1.0};
     BermudanPricer pricer(&process, &payoff, 0.05, 1.0, 5000, 252, exerciseDates);
 
-    double price = pricer.Price();
-    check(price > 0.0 && price < 25.0, "BermudanPricer: price > 0 and in plausible range");
+    auto result = pricer.Price();
+    check(result.price > 0.0 && result.price < 25.0, "BermudanPricer: price > 0 and in plausible range");
 }
 
 void test_basket_payoff() {

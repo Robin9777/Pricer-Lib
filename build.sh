@@ -10,9 +10,11 @@ OUT_QMC="$ROOT/tests/run_tests_qmc"
 OUT_VR="$ROOT/tests/run_tests_varred_compare"
 OUT_AT="$ROOT/tests/run_tests_antithetic"
 OUT_FC="$ROOT/tests/run_tests_full_comparison"
+OUT_DEMO="$ROOT/demo/run_demo"
+OUT_STUDY="$ROOT/demo/run_study"
 
 if [ "${1:-}" = "clean" ]; then
-    rm -f "$OUT_TESTS" "$OUT_ND" "$OUT_QMC" "$OUT_VR" "$OUT_AT" "$OUT_FC"
+    rm -f "$OUT_TESTS" "$OUT_ND" "$OUT_QMC" "$OUT_VR" "$OUT_AT" "$OUT_FC" "$OUT_DEMO" "$OUT_STUDY"
     echo "Cleaned."
     exit 0
 fi
@@ -135,3 +137,19 @@ clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_full_comparison.cpp -o "$OUT_FC"
 echo ""
 echo "--- tests/run_tests_full_comparison ---"
 "$OUT_FC"
+
+# ---------------------------------------------------------------------------
+# Build 7: Interactive demo -> demo/run_demo  (not auto-run: interactive)
+# ---------------------------------------------------------------------------
+echo "Compiling demo/run_demo..."
+clang++ $FLAGS "${LIB_SOURCES[@]}" demo/demo.cpp -o "$OUT_DEMO"
+echo "Demo ready. Run interactively: ./demo/run_demo"
+echo "           or with config:     ./demo/run_demo demo/example_config.json"
+
+# ---------------------------------------------------------------------------
+# Build 8: Study runner -> demo/run_study  (not auto-run: writes CSV files)
+# ---------------------------------------------------------------------------
+echo "Compiling demo/run_study..."
+clang++ $FLAGS "${LIB_SOURCES[@]}" demo/study.cpp -o "$OUT_STUDY"
+echo "Study ready. Run with: ./demo/run_study demo/study_config.json"
+echo "Then open demo/analysis.ipynb in Jupyter."

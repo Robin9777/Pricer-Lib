@@ -1,0 +1,98 @@
+
+{
+  "_note": "Only 'option', 'nbSim_values', 'nSamples', 'output_dir' are read by run_study. All '_*' keys are ignored — use them as comments. To switch option type, replace the 'option' block below with one of the examples at the bottom of this file.",
+
+  "option": {
+    "type":     "european",
+    "spots":    [100.0],
+    "vols":     [0.2],
+    "weights":  [1.0],
+    "rho":      0.0,
+    "strike":   100.0,
+    "rate":     0.05,
+    "maturity": 1.0,
+    "nbSteps":  1,
+    "seed":     42
+  },
+
+  "_note_nbSim": "nbSim_values drives the convergence sweep — each value is one data point on the graphs. nbSim inside 'option' is ignored.",
+  "nbSim_values": [200, 500, 1000, 2000, 5000, 10000, 20000, 50000],
+
+  "_note_nSamples": "nSamples controls how many paths are collected for the terminal distribution and antithetic scatter plots (not the convergence sweep).",
+  "nSamples": 10000,
+
+  "output_dir": "results",
+
+  "_note_notebook": "After running: open demo/analysis.ipynb in Jupyter, update S0/K/r/sigma/T/option_label at the top to match your option, then Run All.",
+
+  "_examples": {
+
+    "_ex1_description": "1D European call — plain vanilla, 1 step is exact for GBM (no discretization bias). All 5 variance reduction methods apply.",
+    "_ex1_option": {
+      "type":     "european",
+      "spots":    [100.0],
+      "vols":     [0.2],
+      "weights":  [1.0],
+      "strike":   100.0,
+      "rate":     0.05,
+      "maturity": 1.0,
+      "nbSteps":  1,
+      "seed":     42
+    },
+
+    "_ex2_description": "Bermudan call — quarterly exercise dates, more steps needed for the regression. Only 'none' and 'qmc' variance reduction are available for Bermudan.",
+    "_ex2_option": {
+      "type":          "bermudan",
+      "spots":         [100.0],
+      "vols":          [0.2],
+      "weights":       [1.0],
+      "strike":        100.0,
+      "rate":          0.05,
+      "maturity":      1.0,
+      "nbSteps":       50,
+      "exerciseDates": [0.25, 0.5, 0.75, 1.0],
+      "seed":          42
+    },
+
+    "_ex3_description": "2D basket call — two correlated assets, equal weights. staticcv and qmc_cv use the geometric basket closed form as control variate (it has an exact price).",
+    "_ex3_option": {
+      "type":     "european",
+      "spots":    [100.0, 100.0],
+      "vols":     [0.2, 0.25],
+      "weights":  [0.5, 0.5],
+      "rho":      0.3,
+      "strike":   100.0,
+      "rate":     0.05,
+      "maturity": 1.0,
+      "nbSteps":  1,
+      "seed":     42
+    },
+
+    "_ex4_description": "3D basket call — three assets, unequal weights and different volatilities. Shows how the variance reduction scales to higher dimensions.",
+    "_ex4_option": {
+      "type":     "european",
+      "spots":    [100.0, 90.0, 110.0],
+      "vols":     [0.2, 0.3, 0.15],
+      "weights":  [0.5, 0.3, 0.2],
+      "rho":      0.4,
+      "strike":   100.0,
+      "rate":     0.05,
+      "maturity": 1.0,
+      "nbSteps":  1,
+      "seed":     42
+    },
+
+    "_ex5_description": "High-vol OTM European call — most paths expire worthless, variance is high. Good to compare antithetic vs QMC on a hard distribution.",
+    "_ex5_option": {
+      "type":     "european",
+      "spots":    [100.0],
+      "vols":     [0.4],
+      "weights":  [1.0],
+      "strike":   130.0,
+      "rate":     0.05,
+      "maturity": 1.0,
+      "nbSteps":  1,
+      "seed":     42
+    }
+  }
+}

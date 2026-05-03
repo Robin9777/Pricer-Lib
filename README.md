@@ -675,6 +675,170 @@ rm tests/run_tests
 
 ---
 
+### Demo
+
+The `demo/` folder contains an interactive pricer. Build it with `./build.sh` (it runs automatically as part of the build), or manually:
+
+```bash
+clang++ -std=c++17 -O2 -I. \
+  RandomGenerator/*.cpp SDE/SinglePath.cpp SDE/RandomProcess.cpp \
+  SDE/BlackScholes1D.cpp SDE/BlackScholes2D.cpp SDE/BlackScholesND.cpp \
+  SDE/BSEuler1D.cpp SDE/BSMilstein1D.cpp SDE/BSMilstein2D.cpp \
+  SDE/BSMilsteinND.cpp SDE/BrownianD1.cpp SDE/BrownianND.cpp SDE/Heston.cpp \
+  Payoffs/PayOff.cpp Payoffs/EuropeanCallPayoff.cpp Payoffs/EuroCallBasketPayOff.cpp \
+  Pricer/MCPricer.cpp Pricer/EuropeanMCPricer.cpp Pricer/BermudanPricer.cpp \
+  Pricer/VarRedMCPricer.cpp Pricer/AntitheticMCPricer.cpp \
+  VarRed/BSClosedForm.cpp VarRed/BasketGeomControlVariate.cpp VarRed/ControlVariate.cpp \
+  demo/demo.cpp -o demo/run_demo
+```
+
+**Interactive mode:**
+
+```bash
+./demo/run_demo
+```
+
+Walks you through option type, assets, parameters and variance reduction method step by step. Robust to bad input.
+
+**Config file mode:**
+
+```bash
+./demo/run_demo demo/example_config.json
+```
+
+Prices all options defined in the JSON file in one shot. Useful to run multiple configs without the interactive menu.
+
+JSON format (`demo/example_config.json` has full examples):
+
+```json
+[
+  {
+    "type": "european",
+    "spots": [100.0],
+    "vols": [0.2],
+    "strike": 100.0,
+    "rate": 0.05,
+    "maturity": 1.0,
+    "nbSim": 10000,
+    "nbSteps": 1,
+    "varReduction": "antithetic",
+    "seed": 42
+  }
+]
+```
+
+| Field | Values |
+|---|---|
+| `type` | `"european"` / `"bermudan"` |
+| `spots`, `vols`, `weights` | arrays, one value per asset |
+| `rho` | correlation between assets (single value for all pairs) |
+| `varReduction` | `"none"` / `"qmc"` / `"antithetic"` / `"staticcv"` / `"qmc_cv"` |
+| `exerciseDates` | array, required for Bermudan |
+| `seed` | optional, default 42 |
+
+When a variance reduction method is used, the output always shows the plain MC baseline alongside so you can see the variance reduction percentage.
+
+---
+
+### Analysis Workflow (Python / Jupyter)
+
+The `demo/` folder also contains a study runner and a Jupyter notebook for systematic analysis across variance reduction methods.
+
+**Overview:**
+
+```
+study_config.json  →  run_study  →  results/*.csv  →  analysis.ipynb  →  plots
+```
+
+**Step 1 — Configure your study**
+
+Edit `demo/study_config.json`:
+
+```json
+{
+  "option": {
+    "type": "european",
+    "spots": [100.0],
+    "vols": [0.2],
+    "weights": [1.0],
+    "strike": 100.0,
+    "rate": 0.05,
+    "maturity": 1.0,
+    "nbSteps": 1,
+    "seed": 42
+  },
+  "nbSim_values": [200, 500, 1000, 2000, 5000, 10000, 20000, 50000],
+  "nSamples": 10000,
+  "output_dir": "results"
+}
+```
+
+| Field | Description |
+|---|---|
+| `option` | The option to price. Same fields as `example_config.json` except no `nbSim` (the sweep controls that) |
+| `nbSim_values` | List of path counts to run — the convergence sweep |
+| `nSamples` | Number of paths for the terminal value / antithetic pair plots |
+| `output_dir` | Where CSVs are written (created if it doesn't exist) |
+
+> `nbSim` inside `option` is ignored — the sweep always iterates over `nbSim_values`.
+
+**Step 2 — Build and run the study**
+
+```bash
+./build.sh                                    # compiles demo/run_study
+./demo/run_study demo/study_config.json       # generates results/
+```
+
+This writes three CSV files into `results/`:
+- `convergence.csv` — price, CI, variance for every method × every N in `nbSim_values`
+- `terminal_plain.csv` — terminal spot prices and payoffs for the distribution plot
+- `antithetic_pairs.csv` — matched (Z, -Z) pairs for the antithetic scatter plot
+
+Methods compared: `plain`, `antithetic`, `staticcv`, `qmc`, `qmc_cv`.
+
+**Step 3 — Open the notebook**
+
+```bash
+jupyter notebook demo/analysis.ipynb
+# or: jupyter lab
+```
+
+**Step 4 — Update the parameters at the top of the notebook**
+
+In the first code cell, set the values to match your `study_config.json`:
+
+```python
+S0    = 100.0   # spot
+K     = 100.0   # strike
+r     = 0.05    # risk-free rate
+sigma = 0.2     # volatility (used for the analytical Black-Scholes price)
+T     = 1.0     # maturity
+
+# label shown in every plot title
+option_label = 'European call, S=100, K=100, σ=20%, T=1y'
+```
+
+**Step 5 — Run All**
+
+Click `Run All` (or `Kernel > Restart & Run All`). The notebook generates six plots:
+
+| Plot | What it shows |
+|---|---|
+| Distribution of $S_T$ | Simulated terminal prices vs theoretical log-normal density |
+| Antithetic pairing | Scatter of $(S_T(Z), S_T(-Z))$ pairs — negative correlation is the key |
+| Price convergence vs N | All methods converging to the analytical price |
+| CI width vs N (log-log) | $1/\sqrt{N}$ slope; variance reduction methods sit lower |
+| Variance by method | Bar chart with % reduction vs plain MC |
+| Paths needed | How many paths each method needs to hit a target CI |
+
+All plots are also saved as PNG files in `results/`.
+
+**Note on Static CV / QMC+CV in the CI plot**
+
+For a 1D European call, the geometric basket control variate is almost perfectly correlated with the payoff — variance collapses to near-zero. On the log-log CI plot, points where CI < 1e-12 are dropped (log(0) is undefined). A note is displayed on the chart explaining this. This is the correct behavior: it means the method is extremely effective for this option.
+
+---
+
 ### Adding a new source file
 
 If you create a new `.cpp` file (e.g. `Payoffs/PutPayoff.cpp`), open `build.sh` and add it to the `SOURCES` array in the relevant section:

@@ -1,0 +1,70 @@
+[
+  {
+    "type": "european",
+    "spots": [100.0],
+    "vols": [0.2],
+    "weights": [1.0],
+    "strike": 100.0,
+    "rate": 0.05,
+    "maturity": 1.0,
+    "nbSim": 10000,
+    "nbSteps": 50,
+    "varReduction": "none",
+    "seed": 42
+  },
+  {
+    "type": "european",
+    "spots": [100.0],
+    "vols": [0.2],
+    "weights": [1.0],
+    "strike": 100.0,
+    "rate": 0.05,
+    "maturity": 1.0,
+    "nbSim": 10000,
+    "nbSteps": 50,
+    "varReduction": "antithetic",
+    "seed": 42
+  },
+  {
+    "type": "european",
+    "spots": [100.0, 100.0],
+    "vols": [0.2, 0.2],
+    "weights": [0.5, 0.5],
+    "rho": 0.3,
+    "strike": 100.0,
+    "rate": 0.05,
+    "maturity": 1.0,
+    "nbSim": 10000,
+    "nbSteps": 50,
+    "varReduction": "staticcv",
+    "seed": 42
+  },
+  {
+    "type": "bermudan",
+    "spots": [100.0],
+    "vols": [0.2],
+    "weights": [1.0],
+    "strike": 100.0,
+    "rate": 0.05,
+    "maturity": 1.0,
+    "nbSim": 10000,
+    "nbSteps": 4,
+    "varReduction": "none",
+    "exerciseDates": [0.25, 0.5, 0.75, 1.0],
+    "seed": 42
+  },
+  {
+    "type": "european",
+    "spots": [100.0, 80.0, 120.0],
+    "vols": [0.2, 0.15, 0.3],
+    "weights": [0.5, 0.3, 0.2],
+    "rho": 0.2,
+    "strike": 100.0,
+    "rate": 0.05,
+    "maturity": 1.0,
+    "nbSim": 10000,
+    "nbSteps": 50,
+    "varReduction": "staticcv",
+    "seed": 42
+  }
+]

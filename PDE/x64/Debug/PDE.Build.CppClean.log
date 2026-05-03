@@ -21,10 +21,31 @@ c:\sandbox\numerical finance\pde\x64\debug\bsvariance.obj
 c:\sandbox\numerical finance\pde\x64\debug\bstrend.obj
 c:\sandbox\numerical finance\pde\x64\debug\bsactualization.obj
 c:\sandbox\numerical finance\x64\debug\pde.lib
-c:\sandbox\numerical finance\pde\x64\debug\pde.tlog\cl.command.1.tlog
-c:\sandbox\numerical finance\pde\x64\debug\pde.tlog\cl.items.tlog
-c:\sandbox\numerical finance\pde\x64\debug\pde.tlog\cl.read.1.tlog
-c:\sandbox\numerical finance\pde\x64\debug\pde.tlog\cl.write.1.tlog
-c:\sandbox\numerical finance\pde\x64\debug\pde.tlog\lib-link.read.1.tlog
-c:\sandbox\numerical finance\pde\x64\debug\pde.tlog\lib-link.write.1.tlog
-c:\sandbox\numerical finance\pde\x64\debug\pde.tlog\lib.command.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\bsactualization.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\bstrend.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\bsvariance.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\callbottomboundary.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\callterminalcondition.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\calltopboundary.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\lvvariance.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\nullfunction.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pch.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pde.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pdegrid2d.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pdegridexplicit.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pdegridimplicit.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\putbottomboundary.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\putterminalcondition.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\puttopboundary.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\r1r1function.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\r2r1function.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\vanillaterminalcondition.obj
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pde.pch
+c:\sandbox\numerical finance 2\pricer-lib\x64\debug\pde.pdb
+c:\sandbox\numerical finance 2\pricer-lib\x64\debug\pde.lib
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pde.tlog\cl.command.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pde.tlog\cl.items.tlog
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pde.tlog\cl.read.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pde.tlog\cl.write.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pde.tlog\lib-link.write.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\pde\x64\debug\pde.tlog\lib.command.1.tlog

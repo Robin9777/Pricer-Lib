@@ -1,14 +1,14 @@
 ﻿  pch.cpp
   Bernoulli.cpp
   Binomial.cpp
-C:\SandBox\Numerical Finance\RandomGenerator\Binomial.cpp(16,23): warning C4244: '+=' : conversion de 'double' en 'unsigned int', perte possible de données
-  (compiler le fichier source '/Binomial.cpp')
-  
   ContinuousGenerator.cpp
   DiscreteGenerator.cpp
   dllmain.cpp
+C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Binomial.cpp(16,23): warning C4244: '+=' : conversion de 'double' en 'unsigned int', perte possible de données
+  (compiler le fichier source '/Binomial.cpp')
+  
   EcuyerCombined.cpp
-C:\SandBox\Numerical Finance\RandomGenerator\EcuyerCombined.cpp(23,15): warning C4267: '+=' : conversion de 'size_t' en 'long', perte possible de données
+C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\EcuyerCombined.cpp(23,15): warning C4267: '+=' : conversion de 'size_t' en 'long', perte possible de données
   (compiler le fichier source '/EcuyerCombined.cpp')
   
   Exponential.cpp
@@ -16,11 +16,11 @@ C:\SandBox\Numerical Finance\RandomGenerator\EcuyerCombined.cpp(23,15): warning 
   HeadTail.cpp
   LinearCongruential.cpp
   Normal.cpp
-C:\SandBox\Numerical Finance\RandomGenerator\Normal.cpp(2,9): warning C4603: '_USE_MATH_DEFINES' : la macro n'est pas définie ou la définition est différente après l'utilisation d'un en-tête précompilé
+C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Normal.cpp(2,9): warning C4603: '_USE_MATH_DEFINES' : la macro n'est pas définie ou la définition est différente après l'utilisation d'un en-tête précompilé
   (compiler le fichier source '/Normal.cpp')
-      C:\SandBox\Numerical Finance\RandomGenerator\Normal.cpp(2,9):
+      C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Normal.cpp(2,9):
       Ajoutez la macro à l'en-tête précompilé au lieu de définir ici
-      C:\SandBox\Numerical Finance\RandomGenerator\Normal.cpp(3,1):
+      C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Normal.cpp(3,1):
       utilisation d'un en-tête précompilé
   
   Poisson.cpp
@@ -28,5 +28,5 @@ C:\SandBox\Numerical Finance\RandomGenerator\Normal.cpp(2,9): warning C4603: '_U
   RandomGenerator.cpp
   UniformGenerator.cpp
   Génération de code en cours...
-C:\SandBox\Numerical Finance\RandomGenerator\Exponential.cpp(25,1): warning C4715: 'Exponential::Generate' : les chemins de contrôle ne retournent pas tous une valeur
-  RandomGenerator.vcxproj -> C:\SandBox\Numerical Finance\x64\Debug\RandomGenerator.lib
+C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Exponential.cpp(25,1): warning C4715: 'Exponential::Generate' : les chemins de contrôle ne retournent pas tous une valeur
+  RandomGenerator.vcxproj -> C:\SandBox\Numerical Finance 2\Pricer-Lib\x64\Debug\RandomGenerator.lib

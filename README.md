@@ -18,7 +18,7 @@ A modular C++ library for Monte Carlo and PDE-based option pricing. Built as a V
 10. [VarRed](#varred)
 11. [Eigen](#eigen)
 12. [Unit Tests](#unit-tests)
-13. [Build](#build)
+13. [Compilation & Build](#compilation--build)
 14. [Full Code Examples](#full-usage-examples)
 
 ---
@@ -588,89 +588,46 @@ Run via Visual Studio Test Explorer: `Test > Test Explorer`.
 
 ---
 
-## Build
+## Compilation & Build
 
-### Files added for Mac support
+The project uses **CMake** as its primary, cross-platform build system. This allows the same commands to work on Windows, Linux, and macOS.
 
-```
-build.sh            — shell script: compiles everything and runs the tests
-tests/
-└── test_main.cpp   — standalone test runner (no MSVC dependencies)
-```
+### 1. Prerequisites
+- **CMake** (3.10 or higher)
+- A C++ compiler supporting **C++17** (GCC, Clang, or MSVC)
 
-Two small header changes were also made to fix Windows-only includes:
-- `RandomGenerator/framework.h` — `#include <windows.h>` is now guarded with `#ifdef _WIN32`
-- `RandomGenerator/RandomGenerator.h` — added `#include <cstddef>` so `size_t` is always available
-
-These changes do not affect the Windows build.
-
-### Mac
-
-**Prerequisites**: Xcode command line tools (provides `clang++`):
+### 2. Universal Build Commands
+From the root of the repository, run:
 
 ```bash
-xcode-select --install
+# 1. Configure the project (creates the build directory)
+cmake -B build
+
+# 2. Compile everything (Demo, Studies, Tests)
+cmake --build build
 ```
 
-**Option 1 — script (compile + run in one shot):**
+The executables will be generated in the `build/` directory (e.g., `build/Debug/run_demo.exe` on Windows or `build/run_demo` on Unix).
 
+### 3. Alternative Build Methods (Legacy)
+
+#### Windows (Visual Studio)
+Open `Numerical Finance VS.sln` in Visual Studio.
+- Press **F7** to build the entire solution.
+- Right-click a project (e.g., `Numerical Finance VS` or `UnitTestPricer`) and select **Set as Startup Project**.
+- Press **F5** to run.
+
+#### Windows (Command Line / MinGW)
+Use the provided batch script:
+```powershell
+.\build.bat
+```
+
+#### macOS / Linux
+Use the provided shell script:
 ```bash
-chmod +x build.sh   # only needed once
+chmod +x build.sh
 ./build.sh
-```
-
-**Option 2 — by hand:**
-
-Compile (run from the repo root):
-
-```bash
-clang++ -std=c++17 -O2 -I. \
-  RandomGenerator/RandomGenerator.cpp \
-  RandomGenerator/UniformGenerator.cpp \
-  RandomGenerator/PseudoGenerator.cpp \
-  RandomGenerator/LinearCongruential.cpp \
-  RandomGenerator/EcuyerCombined.cpp \
-  RandomGenerator/ContinuousGenerator.cpp \
-  RandomGenerator/Normal.cpp \
-  RandomGenerator/Exponential.cpp \
-  RandomGenerator/DiscreteGenerator.cpp \
-  RandomGenerator/Bernoulli.cpp \
-  RandomGenerator/Binomial.cpp \
-  RandomGenerator/Poisson.cpp \
-  RandomGenerator/FiniteSet.cpp \
-  RandomGenerator/HeadTail.cpp \
-  SDE/SinglePath.cpp \
-  SDE/RandomProcess.cpp \
-  SDE/BlackScholes1D.cpp \
-  SDE/BlackScholes2D.cpp \
-  SDE/BSEuler1D.cpp \
-  SDE/BSMilstein1D.cpp \
-  SDE/BSMilstein2D.cpp \
-  SDE/BrownianD1.cpp \
-  SDE/BrownianND.cpp \
-  SDE/Heston.cpp \
-  Payoffs/PayOff.cpp \
-  Payoffs/EuropeanCallPayoff.cpp \
-  Payoffs/EuroCallBasketPayOff.cpp \
-  Pricer/MCPricer.cpp \
-  Pricer/EuropeanMCPricer.cpp \
-  Pricer/BermudanPricer.cpp \
-  tests/test_main.cpp \
-  -o tests/run_tests
-```
-
-Then run it:
-
-```bash
-./tests/run_tests
-```
-
-**Clean:**
-
-```bash
-./build.sh clean
-# or by hand:
-rm tests/run_tests
 ```
 
 ---
@@ -841,17 +798,14 @@ For a 1D European call, the geometric basket control variate is almost perfectly
 
 ### Adding a new source file
 
-If you create a new `.cpp` file (e.g. `Payoffs/PutPayoff.cpp`), open `build.sh` and add it to the `SOURCES` array in the relevant section:
+### Adding a new source file
 
+If you use **CMake**, adding a new file is **automatic**. Just create your `.cpp` file in one of the core folders (e.g. `Payoffs/`, `Pricer/`), and CMake will detect it automatically the next time you run:
 ```bash
-# Payoffs
-Payoffs/PayOff.cpp
-Payoffs/EuropeanCallPayoff.cpp
-Payoffs/EuroCallBasketPayOff.cpp
-Payoffs/PutPayoff.cpp        # <-- add it here
+cmake --build build
 ```
 
-That's it. Run `./build.sh` again and it will be compiled in.
+If you use the legacy scripts (`build.sh` or `build.bat`), you must manually add the path of the new file to the `SOURCES` or `LIB_SOURCES` list inside the script.
 
 **Rules for new `.cpp` files:**
 

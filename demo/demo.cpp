@@ -8,19 +8,19 @@
 #include <stdexcept>
 #include <cctype>
 
-#include "RandomGenerator/LinearCongruential.h"
-#include "RandomGenerator/Normal.h"
-#include "RandomGenerator/HaltonGenerator.h"
-#include "RandomGenerator/AntitheticNormal.h"
-#include "SDE/BSMilstein1D.h"
-#include "SDE/BSMilsteinND.h"
-#include "Payoffs/EuropeanCallPayoff.h"
-#include "Payoffs/EuroCallBasketPayOff.h"
-#include "Pricer/EuropeanMCPricer.h"
-#include "Pricer/BermudanPricer.h"
-#include "Pricer/VarRedMCPricer.h"
-#include "Pricer/AntitheticMCPricer.h"
-#include "VarRed/BasketGeomControlVariate.h"
+#include "../RandomGenerator/LinearCongruential.h"
+#include "../RandomGenerator/Normal.h"
+#include "../RandomGenerator/HaltonGenerator.h"
+#include "../RandomGenerator/AntitheticNormal.h"
+#include "../SDE/BSMilstein1D.h"
+#include "../SDE/BSMilsteinND.h"
+#include "../Payoffs/EuropeanCallPayoff.h"
+#include "../Payoffs/EuroCallBasketPayOff.h"
+#include "../Pricer/EuropeanMCPricer.h"
+#include "../Pricer/BermudanPricer.h"
+#include "../Pricer/VarRedMCPricer.h"
+#include "../Pricer/AntitheticMCPricer.h"
+#include "../VarRed/BasketGeomControlVariate.h"
 
 struct OptionConfig {
     std::string type         = "european";

@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\SandBox\Numerical Finance\x64\Debug\UnitTestPDE.dll</FullPath>
+      <FullPath>C:\SandBox\Numerical Finance 2\Pricer-Lib\x64\Debug\UnitTestPDE.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

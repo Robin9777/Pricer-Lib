@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/SandBox/Numerical Finance 2/Pricer-Lib/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

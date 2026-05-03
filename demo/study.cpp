@@ -6,20 +6,20 @@
 #include <cmath>
 #include <stdexcept>
 #include <cctype>
-#include <sys/stat.h>
+#include <filesystem>
 
-#include "RandomGenerator/LinearCongruential.h"
-#include "RandomGenerator/Normal.h"
-#include "RandomGenerator/HaltonGenerator.h"
-#include "RandomGenerator/AntitheticNormal.h"
-#include "SDE/BSMilstein1D.h"
-#include "SDE/BSMilsteinND.h"
-#include "Payoffs/EuropeanCallPayoff.h"
-#include "Payoffs/EuroCallBasketPayOff.h"
-#include "Pricer/EuropeanMCPricer.h"
-#include "Pricer/VarRedMCPricer.h"
-#include "Pricer/AntitheticMCPricer.h"
-#include "VarRed/BasketGeomControlVariate.h"
+#include "../RandomGenerator/LinearCongruential.h"
+#include "../RandomGenerator/Normal.h"
+#include "../RandomGenerator/HaltonGenerator.h"
+#include "../RandomGenerator/AntitheticNormal.h"
+#include "../SDE/BSMilstein1D.h"
+#include "../SDE/BSMilsteinND.h"
+#include "../Payoffs/EuropeanCallPayoff.h"
+#include "../Payoffs/EuroCallBasketPayOff.h"
+#include "../Pricer/EuropeanMCPricer.h"
+#include "../Pricer/VarRedMCPricer.h"
+#include "../Pricer/AntitheticMCPricer.h"
+#include "../VarRed/BasketGeomControlVariate.h"
 
 struct OptionConfig {
     std::string type         = "european";
@@ -396,7 +396,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    mkdir(study.outDir.c_str(), 0755);
+    std::filesystem::create_directories(study.outDir);
 
     int N = (int)study.option.spots.size();
     std::vector<std::vector<double>> corr(N, std::vector<double>(N));

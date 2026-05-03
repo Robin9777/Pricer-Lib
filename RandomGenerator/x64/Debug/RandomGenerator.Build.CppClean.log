@@ -18,10 +18,28 @@ c:\sandbox\numerical finance\randomgenerator\x64\debug\continuousgenerator.obj
 c:\sandbox\numerical finance\randomgenerator\x64\debug\binomial.obj
 c:\sandbox\numerical finance\randomgenerator\x64\debug\bernoulli.obj
 c:\sandbox\numerical finance\x64\debug\randomgenerator.lib
-c:\sandbox\numerical finance\randomgenerator\x64\debug\randomgenerator.tlog\cl.command.1.tlog
-c:\sandbox\numerical finance\randomgenerator\x64\debug\randomgenerator.tlog\cl.items.tlog
-c:\sandbox\numerical finance\randomgenerator\x64\debug\randomgenerator.tlog\cl.read.1.tlog
-c:\sandbox\numerical finance\randomgenerator\x64\debug\randomgenerator.tlog\cl.write.1.tlog
-c:\sandbox\numerical finance\randomgenerator\x64\debug\randomgenerator.tlog\lib-link.read.1.tlog
-c:\sandbox\numerical finance\randomgenerator\x64\debug\randomgenerator.tlog\lib-link.write.1.tlog
-c:\sandbox\numerical finance\randomgenerator\x64\debug\randomgenerator.tlog\lib.command.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\bernoulli.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\binomial.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\continuousgenerator.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\discretegenerator.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\dllmain.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\ecuyercombined.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\exponential.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\finiteset.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\headtail.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\linearcongruential.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\normal.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\pch.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\poisson.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\pseudogenerator.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\randomgenerator.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\uniformgenerator.obj
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\randomgenerator.pch
+c:\sandbox\numerical finance 2\pricer-lib\x64\debug\randomgenerator.pdb
+c:\sandbox\numerical finance 2\pricer-lib\x64\debug\randomgenerator.lib
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\randomgenerator.tlog\cl.command.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\randomgenerator.tlog\cl.items.tlog
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\randomgenerator.tlog\cl.read.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\randomgenerator.tlog\cl.write.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\randomgenerator.tlog\lib-link.write.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\randomgenerator\x64\debug\randomgenerator.tlog\lib.command.1.tlog

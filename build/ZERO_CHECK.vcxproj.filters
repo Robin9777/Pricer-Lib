@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\build\CMakeFiles\306d5fd62d0c5516393d8de6554653f1\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{0F1DD7F1-5578-3946-8DBF-01DDF82C689E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

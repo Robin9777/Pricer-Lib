@@ -1,12 +1,12 @@
-C:\SandBox\Numerical Finance\SDE\BlackScholes1D.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\BlackScholes1D.obj
-C:\SandBox\Numerical Finance\SDE\BlackScholes2D.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\BlackScholes2D.obj
-C:\SandBox\Numerical Finance\SDE\BrownianD1.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\BrownianD1.obj
-C:\SandBox\Numerical Finance\SDE\BrownianND.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\BrownianND.obj
-C:\SandBox\Numerical Finance\SDE\BSEuler1D.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\BSEuler1D.obj
-C:\SandBox\Numerical Finance\SDE\BSMilstein1D.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\BSMilstein1D.obj
-C:\SandBox\Numerical Finance\SDE\BSMilstein2D.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\BSMilstein2D.obj
-C:\SandBox\Numerical Finance\SDE\Heston.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\Heston.obj
-C:\SandBox\Numerical Finance\SDE\pch.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\pch.obj
-C:\SandBox\Numerical Finance\SDE\RandomProcess.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\RandomProcess.obj
-C:\SandBox\Numerical Finance\SDE\SDE.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\SDE.obj
-C:\SandBox\Numerical Finance\SDE\SinglePath.cpp;C:\SandBox\Numerical Finance\SDE\x64\Debug\SinglePath.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BlackScholes1D.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\BlackScholes1D.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BlackScholes2D.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\BlackScholes2D.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BrownianD1.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\BrownianD1.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BrownianND.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\BrownianND.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BSEuler1D.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\BSEuler1D.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BSMilstein1D.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\BSMilstein1D.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BSMilstein2D.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\BSMilstein2D.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\Heston.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\Heston.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\pch.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\pch.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\RandomProcess.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\RandomProcess.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\SDE.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\SDE.obj
+C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\SinglePath.cpp;C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\x64\Debug\SinglePath.obj

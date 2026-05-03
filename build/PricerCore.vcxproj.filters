@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Payoffs\EuroCallBasketPayOff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Payoffs\EuropeanCallPayoff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Payoffs\PayOff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Payoffs\Payoffs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Pricer\AntitheticMCPricer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Pricer\BermudanPricer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Pricer\EuropeanMCPricer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Pricer\MCPricer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Pricer\Pricer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\Pricer\VarRedMCPricer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\AntitheticNormal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Bernoulli.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Binomial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\ContinuousGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\DiscreteGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\EcuyerCombined.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Exponential.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\FiniteSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\HaltonGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\HeadTail.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\LinearCongruential.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Normal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\Poisson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\PseudoGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\RandomGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\RandomGenerator\UniformGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BSEuler1D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BSMilstein1D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BSMilstein2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BSMilsteinND.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BlackScholes1D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BlackScholes2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BlackScholesND.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BrownianD1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\BrownianND.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\Heston.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\RandomProcess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\SDE.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\SDE\SinglePath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\VarRed\BSClosedForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\VarRed\BasketGeomControlVariate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\VarRed\ControlVariate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\VarRed\VarRed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\SandBox\Numerical Finance 2\Pricer-Lib\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6D046CD4-A398-3B77-8B73-0A1C775C5938}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

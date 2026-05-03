@@ -2,7 +2,7 @@
 #include "MCPricer.h"
 #include "../Payoffs/Payoff.h"
 #include "../SDE/RandomProcess.h"
-#include "Eigen/Dense"
+#include "../Eigen/Dense"
 #include <vector>
 
 class BermudanPricer :

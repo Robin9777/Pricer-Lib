@@ -14,10 +14,24 @@ c:\sandbox\numerical finance\sde\x64\debug\browniand1.obj
 c:\sandbox\numerical finance\sde\x64\debug\blackscholes2d.obj
 c:\sandbox\numerical finance\sde\x64\debug\blackscholes1d.obj
 c:\sandbox\numerical finance\x64\debug\sde.lib
-c:\sandbox\numerical finance\sde\x64\debug\sde.tlog\cl.command.1.tlog
-c:\sandbox\numerical finance\sde\x64\debug\sde.tlog\cl.items.tlog
-c:\sandbox\numerical finance\sde\x64\debug\sde.tlog\cl.read.1.tlog
-c:\sandbox\numerical finance\sde\x64\debug\sde.tlog\cl.write.1.tlog
-c:\sandbox\numerical finance\sde\x64\debug\sde.tlog\lib-link.read.1.tlog
-c:\sandbox\numerical finance\sde\x64\debug\sde.tlog\lib-link.write.1.tlog
-c:\sandbox\numerical finance\sde\x64\debug\sde.tlog\lib.command.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\blackscholes1d.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\blackscholes2d.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\browniand1.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\browniannd.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\bseuler1d.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\bsmilstein1d.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\bsmilstein2d.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\heston.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\pch.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\randomprocess.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\sde.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\singlepath.obj
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\sde.pch
+c:\sandbox\numerical finance 2\pricer-lib\x64\debug\sde.pdb
+c:\sandbox\numerical finance 2\pricer-lib\x64\debug\sde.lib
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\sde.tlog\cl.command.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\sde.tlog\cl.items.tlog
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\sde.tlog\cl.read.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\sde.tlog\cl.write.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\sde.tlog\lib-link.write.1.tlog
+c:\sandbox\numerical finance 2\pricer-lib\sde\x64\debug\sde.tlog\lib.command.1.tlog

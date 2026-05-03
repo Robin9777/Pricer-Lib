@@ -12,6 +12,8 @@
     "varReduction": "none",
     "seed": 42
   },
+
+
   {
     "type": "european",
     "spots": [100.0],
@@ -25,6 +27,7 @@
     "varReduction": "antithetic",
     "seed": 42
   },
+
   {
     "type": "european",
     "spots": [100.0, 100.0],
@@ -39,6 +42,7 @@
     "varReduction": "staticcv",
     "seed": 42
   },
+
   {
     "type": "bermudan",
     "spots": [100.0],
@@ -53,6 +57,7 @@
     "exerciseDates": [0.25, 0.5, 0.75, 1.0],
     "seed": 42
   },
+  
   {
     "type": "european",
     "spots": [100.0, 80.0, 120.0],

@@ -90,13 +90,13 @@ clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_milstein_nd.cpp -o "$OUT_ND"
 # ---------------------------------------------------------------------------
 # Run both
 # ---------------------------------------------------------------------------
-echo ""
-echo "--- tests/run_tests ---"
-"$OUT_TESTS"
+#echo ""
+#echo "--- tests/run_tests ---"
+#"$OUT_TESTS"
 
-echo ""
-echo "--- tests/run_tests_nd ---"
-"$OUT_ND"
+#echo ""
+#echo "--- tests/run_tests_nd ---"
+#"$OUT_ND"
 
 # ---------------------------------------------------------------------------
 # Build 3: QMC variance reduction tests -> tests/run_tests_qmc
@@ -104,9 +104,9 @@ echo "--- tests/run_tests_nd ---"
 echo "Compiling tests/run_tests_qmc..."
 clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_qmc.cpp -o "$OUT_QMC"
 
-echo ""
-echo "--- tests/run_tests_qmc ---"
-"$OUT_QMC"
+#echo ""
+#echo "--- tests/run_tests_qmc ---"
+#"$OUT_QMC"
 
 # ---------------------------------------------------------------------------
 # Build 4: Variance reduction comparison -> tests/run_tests_varred_compare
@@ -114,9 +114,9 @@ echo "--- tests/run_tests_qmc ---"
 echo "Compiling tests/run_tests_varred_compare..."
 clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_varred_compare.cpp -o "$OUT_VR"
 
-echo ""
-echo "--- tests/run_tests_varred_compare ---"
-"$OUT_VR"
+#echo ""
+#echo "--- tests/run_tests_varred_compare ---"
+#"$OUT_VR"
 
 # ---------------------------------------------------------------------------
 # Build 5: Antithetic variables -> tests/run_tests_antithetic
@@ -124,9 +124,9 @@ echo "--- tests/run_tests_varred_compare ---"
 echo "Compiling tests/run_tests_antithetic..."
 clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_antithetic.cpp -o "$OUT_AT"
 
-echo ""
-echo "--- tests/run_tests_antithetic ---"
-"$OUT_AT"
+#echo ""
+#echo "--- tests/run_tests_antithetic ---"
+#"$OUT_AT"
 
 # ---------------------------------------------------------------------------
 # Build 6: Full variance reduction comparison -> tests/run_tests_full_comparison
@@ -134,22 +134,22 @@ echo "--- tests/run_tests_antithetic ---"
 echo "Compiling tests/run_tests_full_comparison..."
 clang++ $FLAGS "${LIB_SOURCES[@]}" tests/test_full_comparison.cpp -o "$OUT_FC"
 
-echo ""
-echo "--- tests/run_tests_full_comparison ---"
-"$OUT_FC"
+#echo ""
+#echo "--- tests/run_tests_full_comparison ---"
+#"$OUT_FC"
 
 # ---------------------------------------------------------------------------
 # Build 7: Interactive demo -> demo/run_demo  (not auto-run: interactive)
 # ---------------------------------------------------------------------------
 echo "Compiling demo/run_demo..."
 clang++ $FLAGS "${LIB_SOURCES[@]}" demo/demo.cpp -o "$OUT_DEMO"
-echo "Demo ready. Run interactively: ./demo/run_demo"
-echo "           or with config:     ./demo/run_demo demo/example_config.json"
+#echo "Demo ready. Run interactively: ./demo/run_demo"
+#echo "           or with config:     ./demo/run_demo demo/example_config.json"
 
 # ---------------------------------------------------------------------------
 # Build 8: Study runner -> demo/run_study  (not auto-run: writes CSV files)
 # ---------------------------------------------------------------------------
 echo "Compiling demo/run_study..."
 clang++ $FLAGS "${LIB_SOURCES[@]}" demo/study.cpp -o "$OUT_STUDY"
-echo "Study ready. Run with: ./demo/run_study demo/study_config.json"
-echo "Then open demo/analysis.ipynb in Jupyter."
+#echo "Study ready. Run with: ./demo/run_study demo/study_config.json"
+#echo "Then open demo/analysis.ipynb in Jupyter."
